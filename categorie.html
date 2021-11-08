@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Пицца</title>
+	<!-- <link rel="shortcut icon" href="images/favicon.png" type="image/png"> -->
+	<link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="css/style.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header>
+		<div class="container">
+			<a href="index.html" class="logo"><img src="img/logo.svg" alt="Название сайта"></a>
+			<nav class="d-none d-xl-block">
+				<ul>
+					<li><a href="menu.html">Меню</a></li>
+					<li><a href="about.html">О нас</a></li>
+					<li><a href="delivery.html">Доставка и оплата</a></li>
+					<li><a href="vacancies.html">Вакансии</a></li>
+					<li><a href="favorites.html">Избранное</a></li>
+				</ul>
+			</nav>
+			<a class="d-none d-md-block" href="search.html">
+				<img src="img/icons/search2.svg" class="icon-1">
+			</a>
+			<div class="d-none d-md-block">
+				<div class="mb-2">
+					<a href="tel:+79879877878" class="d-flex align-items-center">
+						<img src="img/icons/phone.svg" alt="телефон" class="icon-2 me-2">
+						<span class="fw-5">+7 (987) 987-78-78</span>
+					</a>
+				</div>
+				<div class="d-flex align-items-center">
+					<img src="img/icons/clock.svg" alt="время" class="icon-2 me-2">
+					<span class="fw-5">с 10:00 до 21:00</span>
+				</div>
+			</div>
+			<div class="d-flex">
+				<a href="comparing.html" class="d-none d-md-flex btn-icon btn-icon-dark">
+					<svg viewBox="0 0 31 32" xmlns="http://www.w3.org/2000/svg">
+						<path d="M15.5005 26.2917V13.4271" />
+						<path d="M23.2192 26.2917V5.70834" />
+						<path d="M7.78174 26.2917L7.78174 13.4271" />
+					</svg>
+					<div class="count">16</div>
+				</a>
+				<button type="button" data-bs-toggle="modal" data-bs-target="#entrance" class="d-none d-md-flex btn-icon btn-icon-dark ms-3">
+					<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+						<path
+							d="M26.6662 27.9999V25.3333C26.6662 23.9188 26.1043 22.5622 25.1041 21.562C24.1039 20.5618 22.7473 19.9999 21.3328 19.9999H10.6662C9.25167 19.9999 7.89512 20.5618 6.89492 21.562C5.89473 22.5622 5.33282 23.9188 5.33282 25.3333V27.9999" />
+						<path
+							d="M15.9995 14.6666C18.9451 14.6666 21.3329 12.2788 21.3329 9.33327C21.3329 6.38775 18.9451 3.99994 15.9995 3.99994C13.054 3.99994 10.6662 6.38775 10.6662 9.33327C10.6662 12.2788 13.054 14.6666 15.9995 14.6666Z" />
+					</svg>
+				</button>
+				<div class="d-none d-md-flex ms-3" id="toggle-cart">
+					<a href="" class="btn-icon btn-icon-dark">
+						<svg viewBox="0 0 33 32" xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M12.7995 29.3333C13.5359 29.3333 14.1329 28.7363 14.1329 27.9999C14.1329 27.2635 13.5359 26.6666 12.7995 26.6666C12.0631 26.6666 11.4662 27.2635 11.4662 27.9999C11.4662 28.7363 12.0631 29.3333 12.7995 29.3333Z" />
+							<path
+								d="M27.4661 29.3333C28.2025 29.3333 28.7995 28.7363 28.7995 27.9999C28.7995 27.2635 28.2025 26.6666 27.4661 26.6666C26.7298 26.6666 26.1328 27.2635 26.1328 27.9999C26.1328 28.7363 26.7298 29.3333 27.4661 29.3333Z" />
+							<path
+								d="M2.13281 1.33328H7.46615L11.0395 19.1866C11.1614 19.8005 11.4954 20.3519 11.9829 20.7443C12.4704 21.1368 13.0804 21.3453 13.7061 21.3333H26.6661C27.2919 21.3453 27.9019 21.1368 28.3894 20.7443C28.8769 20.3519 29.2109 19.8005 29.3328 19.1866L31.4661 7.99995H8.79948" />
+						</svg>
+						<div class="count">16</div>
+					</a>
+					<div class="cart-preview">
+						<div class="item p-4">
+							<div class="d-flex align-items-start">
+								<img src="img/products/frutti-di-maro.png" alt="Пицца Маргарита" class="me-3">
+								<div class="text">
+									<div class="title">Пицца Маргарита</div>
+									<div class="ingredients">Тесто, томатный соус, сыр, томаты, базилик, орегано Lorem
+										ipsum dolor sit amet consectetur, adipisicing elit. Nostrum dolore cum maxime
+										optio ex, iure voluptatibus mollitia pariatur temporibus quibusdam illum
+										possimus, error ipsum, rerum deleniti eaque nesciunt rem in.</div>
+								</div>
+								<button type="button" class="btn-icon btn-icon-del ms-3">
+									<svg viewBox="0 0 14 17" xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M1 15.1111C1 16.15 1.9 17 3 17H11C12.1 17 13 16.15 13 15.1111V3.77778H1V15.1111ZM14 0.944444H10.5L9.5 0H4.5L3.5 0.944444H0V2.83333H14V0.944444Z" />
+									</svg>
+								</button>
+							</div>
+							<div class="d-flex align-items-center mt-2">
+								<div class="weight dark-orange text-center me-3">400 г</div>
+								<div class="d-flex align-items-center flex-grow-1">
+									<button class="btn-mini" type="button">
+										<svg width="9" height="2" viewBox="0 0 9 2" fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path d="M8.875 1.625H0.125V0.375H8.875V1.625Z" fill="#323232" />
+										</svg>
+									</button>
+									<input type="number" placeholder="0" value="1">
+									<button class="btn-mini" type="button">
+										<svg width="9" height="10" viewBox="0 0 9 10" fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M8.875 5.625H5.125V9.375H3.875V5.625H0.125V4.375H3.875V0.625H5.125V4.375H8.875V5.625Z"
+												fill="#454545" />
+										</svg>
+									</button>
+								</div>
+								<div class="text-end fw-5 ms-3">
+									360 ₽
+								</div>
+							</div>
+						</div>
+						<div class="item p-4">
+							<div class="d-flex align-items-start">
+								<img src="img/products/frutti-di-maro.png" alt="Пицца Маргарита" class="me-3">
+								<div class="text">
+									<div class="title">Пицца Маргарита</div>
+									<div class="ingredients">Тесто, томатный соус, сыр, томаты, базилик, орегано Lorem
+										ipsum dolor sit amet consectetur, adipisicing elit. Nostrum dolore cum maxime
+										optio ex, iure voluptatibus mollitia pariatur temporibus quibusdam illum
+										possimus, error ipsum, rerum deleniti eaque nesciunt rem in.</div>
+								</div>
+								<button type="button" class="btn-icon btn-icon-del ms-3">
+									<svg viewBox="0 0 14 17" xmlns="http://www.w3.org/2000/svg">
+										<path
+											d="M1 15.1111C1 16.15 1.9 17 3 17H11C12.1 17 13 16.15 13 15.1111V3.77778H1V15.1111ZM14 0.944444H10.5L9.5 0H4.5L3.5 0.944444H0V2.83333H14V0.944444Z" />
+									</svg>
+								</button>
+							</div>
+							<div class="d-flex align-items-center mt-2">
+								<div class="weight dark-orange text-center me-3">400 г</div>
+								<div class="d-flex align-items-center flex-grow-1">
+									<button class="btn-mini" type="button">
+										<svg width="9" height="2" viewBox="0 0 9 2" fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path d="M8.875 1.625H0.125V0.375H8.875V1.625Z" fill="#323232" />
+										</svg>
+									</button>
+									<input type="number" placeholder="0" value="1">
+									<button class="btn-mini" type="button">
+										<svg width="9" height="10" viewBox="0 0 9 10" fill="none"
+											xmlns="http://www.w3.org/2000/svg">
+											<path
+												d="M8.875 5.625H5.125V9.375H3.875V5.625H0.125V4.375H3.875V0.625H5.125V4.375H8.875V5.625Z"
+												fill="#454545" />
+										</svg>
+									</button>
+								</div>
+								<div class="text-end fw-5 ms-3">
+									360 ₽
+								</div>
+							</div>
+						</div>
+						<div class="px-4 pt-3 pb-4">
+							<a href="#" class="btn btn-1 w-100">Оформить заказ 720 ₽</a>
+						</div>
+					</div>
+				</div>
+				<a href="" class="d-flex d-md-none btn-icon btn-icon-dark ms-3">
+					<svg viewBox="0 0 29 30" xmlns="http://www.w3.org/2000/svg">
+						<path
+							d="M7.25 2.91663L3.625 7.74996V24.6666C3.625 25.3076 3.87961 25.9223 4.33283 26.3755C4.78604 26.8287 5.40073 27.0833 6.04167 27.0833H22.9583C23.5993 27.0833 24.214 26.8287 24.6672 26.3755C25.1204 25.9223 25.375 25.3076 25.375 24.6666V7.74996L21.75 2.91663H7.25Z" />
+						<path d="M3.625 7.75H25.375" />
+						<path
+							d="M19.3334 12.5834C19.3334 13.8653 18.8242 15.0946 17.9178 16.0011C17.0113 16.9075 15.782 17.4167 14.5001 17.4167C13.2182 17.4167 11.9888 16.9075 11.0824 16.0011C10.176 15.0946 9.66675 13.8653 9.66675 12.5834" />
+					</svg>
+					<div class="count">16</div>
+				</a>
+				<button class="btn-icon btn-icon-dark ms-3 d-block d-xl-none" type="button" data-bs-toggle="offcanvas"
+					data-bs-target="#right-menu">
+					<svg viewBox="0 0 33 34" xmlns="http://www.w3.org/2000/svg">
+						<path d="M4.125 17H28.875" />
+						<path d="M4.125 8.75H28.875" />
+						<path d="M4.125 25.25H28.875" />
+					</svg>
+				</button>
+			</div>
+		</div>
+	</header>
+
+	<div class="container d-none d-md-block">
+		<button type="button" data-bs-toggle="modal" data-bs-target="#city" class="d-flex align-items-center">
+			<img src="img/icons/map-pin.svg" alt="город" class="me-2">
+			<span class="fs-13 fw-5 bb-dash">г. Казань</span>
+			<img src="img/icons/chevron-down.svg" alt="выбрать" class="ms-2">
+		</button>
+	</div>
+
+	<main>
+		<div class="container mb-4 mb-md-5">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb mb-0">
+					<li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+					<li class="breadcrumb-item"><a href="menu.html">Меню</a></li>
+					<li class="breadcrumb-item"><a href="categorie.html">Пицца</a></li>
+				</ol>
+			</nav>
+		</div>
+
+		<section id="sec-2" class="mb-8">
+			<div class="container">
+				<div class="d-flex justify-content-between mb-4 mb-md-5">
+					<h1 class="mb-0">Пицца</h1>
+					<div class="d-flex align-items-center">
+						<div class="text-form">
+							<input type="radio" name="sort" value="val-1" checked>
+							<div>Популярное</div>
+						</div>
+						<div class="text-form ms-4">
+							<input type="radio" name="sort" value="val-2">
+							<div class="d-flex align-items-center">
+								<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+									<path d="M8 3.33336V12.6667" />
+									<path d="M12.6663 8L7.99967 12.6667L3.33301 8"/>
+								</svg>						
+								<span class="ms-1">Дороже</span>
+							</div>
+						</div>
+						<div class="text-form gray-2 ms-4">
+							<input type="radio" name="sort" value="val-3">
+							<div class="d-flex align-items-center">
+								<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+									<path d="M8 12.6667V3.33336" />
+									<path d="M3.33301 8.00003L7.99967 3.33336L12.6663 8.00003"/>
+								</svg>									
+								<span class="ms-1">Дешевле</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="row row-cols-2 row-cols-sm-3 row-cols-xl-4 gx-2 gy-3 g-md-4">
+					<div>
+						<div class="product-preview">
+							<div>
+								<a href="product.html">
+									<img src="img/products/margarita.png" alt="">
+									<h5>Пицца «Маргарита»</h5>
+								</a>
+								<div class="ingredients">Тесто, томатный соус, сыр, томаты, базилик, орегано</div>
+								<div class="switch">
+									<div class="indicator"></div>
+									<button type="button" class="switch-option" onclick="switchTo(this);">25 см</button>
+									<button type="button" class="switch-option active" onclick="switchTo(this);">30 см</button>
+									<button type="button" class="switch-option" onclick="switchTo(this);">35 см</button>
+								</div>
+							</div>
+							<div class="d-md-flex justify-content-between align-items-center">
+								<div class="price d-flex flex-row flex-md-column align-items-center align-items-md-start justify-content-between mb-2 mb-md-0">
+									<div class="primary">400 грамм</div>
+									<div class="d-flex flex-wrap flex-row-reverse flex-md-row align-items-center">
+										<span class="fw-5 fs-15 align-middle">300 ₽</span>
+										<span class="gray text-decoration-line-through align-middle me-1 me-md-0 ms-1">500 ₽</span>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<div class="add-count">
+										<button class="btn-mini" type="button">
+											<img src="img/icons/minus2.svg" alt="">
+										</button>
+										<input type="number" placeholder="0" value="1">
+										<button class="btn-mini" type="button">
+											<img src="img/icons/plus2.svg" alt="">
+										</button>
+									</div>
+									<button type="button" class="add-prod" onclick="this.previousElementSibling.style.marginTop='0';">Добавить</button>
+								</div>
+							</div>
+							<button type="button" class="btn-icon compare" data-state="on" onclick="toggleState(this);"></button>
+							<button type="button" class="btn-icon favorite" data-state="off" onclick="toggleState(this);"></button>
+						</div>
+					</div>
+					<div>
+						<div class="product-preview">
+							<div>
+								<a href="product.html">
+									<img src="img/products/margarita.png" alt="">
+									<h5>Пицца «Фрутти ди Маро»</h5>
+								</a>
+								<div class="ingredients">Тесто, томатный соус, сыр, томаты, базилик, орегано</div>
+								<div class="switch">
+									<div class="indicator"></div>
+									<button type="button" class="switch-option" onclick="switchTo(this);">25 см</button>
+									<button type="button" class="switch-option active" onclick="switchTo(this);">30 см</button>
+								</div>
+							</div>
+							<div class="d-md-flex justify-content-between align-items-center">
+								<div class="price d-flex flex-row flex-md-column align-items-center align-items-md-start justify-content-between mb-2 mb-md-0">
+									<div class="primary">400 грамм</div>
+									<div class="d-flex flex-wrap flex-row-reverse flex-md-row align-items-center">
+										<span class="fw-5 fs-15 align-middle">300 ₽</span>
+										<span class="gray text-decoration-line-through align-middle me-1 me-md-0 ms-1">500 ₽</span>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<div class="add-count">
+										<button class="btn-mini" type="button">
+											<img src="img/icons/minus2.svg" alt="">
+										</button>
+										<input type="number" placeholder="0" value="1">
+										<button class="btn-mini" type="button">
+											<img src="img/icons/plus2.svg" alt="">
+										</button>
+									</div>
+									<button type="button" class="add-prod" onclick="this.previousElementSibling.style.marginTop='0';">Добавить</button>
+								</div>
+							</div>
+							<button type="button" class="btn-icon compare" data-state="on" onclick="toggleState(this);"></button>
+							<button type="button" class="btn-icon favorite" data-state="off" onclick="toggleState(this);"></button>
+						</div>
+					</div>
+					<div>
+						<div class="product-preview">
+							<div>
+								<a href="product.html">
+									<img src="img/products/filadelfia.png" alt="">
+									<h5>Ролл «Филадельфия»</h5>
+								</a>
+								<div class="ingredients">лосось, сливочный сыр, огурец, рис, нори</div>
+							</div>
+							<div class="d-md-flex justify-content-between align-items-center">
+								<div class="price d-flex flex-row flex-md-column align-items-center align-items-md-start justify-content-between mb-2 mb-md-0">
+									<div class="primary">400 грамм</div>
+									<div class="d-flex flex-wrap flex-row-reverse flex-md-row align-items-center">
+										<span class="fw-5 fs-15 align-middle">300 ₽</span>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<div class="add-count">
+										<button class="btn-mini" type="button">
+											<img src="img/icons/minus2.svg" alt="">
+										</button>
+										<input type="number" placeholder="0" value="1">
+										<button class="btn-mini" type="button">
+											<img src="img/icons/plus2.svg" alt="">
+										</button>
+									</div>
+									<button type="button" class="add-prod" onclick="this.previousElementSibling.style.marginTop='0';">Добавить</button>
+								</div>
+							</div>
+							<button type="button" class="btn-icon compare" data-state="on" onclick="toggleState(this);"></button>
+							<button type="button" class="btn-icon favorite" data-state="off" onclick="toggleState(this);"></button>
+						</div>
+					</div>
+					<div>
+						<div class="product-preview">
+							<div>
+								<a href="product.html">
+									<img src="img/products/margarita.png" alt="">
+									<h5>Пицца «Маргарита»</h5>
+								</a>
+								<div class="ingredients">Тесто, томатный соус, сыр, томаты, базилик, орегано</div>
+								<div class="switch">
+									<div class="indicator"></div>
+									<button type="button" class="switch-option" onclick="switchTo(this);">25 см</button>
+									<button type="button" class="switch-option active" onclick="switchTo(this);">30 см</button>
+									<button type="button" class="switch-option" onclick="switchTo(this);">35 см</button>
+								</div>
+							</div>
+							<div class="d-md-flex justify-content-between align-items-center">
+								<div class="price d-flex flex-row flex-md-column align-items-center align-items-md-start justify-content-between mb-2 mb-md-0">
+									<div class="primary">400 грамм</div>
+									<div class="d-flex flex-wrap flex-row-reverse flex-md-row align-items-center">
+										<span class="fw-5 fs-15 align-middle">300 ₽</span>
+										<span class="gray text-decoration-line-through align-middle me-1 me-md-0 ms-1">500 ₽</span>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<div class="add-count">
+										<button class="btn-mini" type="button">
+											<img src="img/icons/minus2.svg" alt="">
+										</button>
+										<input type="number" placeholder="0" value="1">
+										<button class="btn-mini" type="button">
+											<img src="img/icons/plus2.svg" alt="">
+										</button>
+									</div>
+									<button type="button" class="add-prod" onclick="this.previousElementSibling.style.marginTop='0';">Добавить</button>
+								</div>
+							</div>
+							<button type="button" class="btn-icon compare" data-state="on" onclick="toggleState(this);"></button>
+							<button type="button" class="btn-icon favorite" data-state="off" onclick="toggleState(this);"></button>
+						</div>
+					</div>
+					<div>
+						<div class="product-preview">
+							<div>
+								<a href="product.html">
+									<img src="img/products/margarita.png" alt="">
+									<h5>Пицца «Фрутти ди Маро»</h5>
+								</a>
+								<div class="ingredients">Тесто, томатный соус, сыр, томаты, базилик, орегано</div>
+								<div class="switch">
+									<div class="indicator"></div>
+									<button type="button" class="switch-option" onclick="switchTo(this);">25 см</button>
+									<button type="button" class="switch-option active" onclick="switchTo(this);">30 см</button>
+								</div>
+							</div>
+							<div class="d-md-flex justify-content-between align-items-center">
+								<div class="price d-flex flex-row flex-md-column align-items-center align-items-md-start justify-content-between mb-2 mb-md-0">
+									<div class="primary">400 грамм</div>
+									<div class="d-flex flex-wrap flex-row-reverse flex-md-row align-items-center">
+										<span class="fw-5 fs-15 align-middle">300 ₽</span>
+										<span class="gray text-decoration-line-through align-middle me-1 me-md-0 ms-1">500 ₽</span>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<div class="add-count">
+										<button class="btn-mini" type="button">
+											<img src="img/icons/minus2.svg" alt="">
+										</button>
+										<input type="number" placeholder="0" value="1">
+										<button class="btn-mini" type="button">
+											<img src="img/icons/plus2.svg" alt="">
+										</button>
+									</div>
+									<button type="button" class="add-prod" onclick="this.previousElementSibling.style.marginTop='0';">Добавить</button>
+								</div>
+							</div>
+							<button type="button" class="btn-icon compare" data-state="on" onclick="toggleState(this);"></button>
+							<button type="button" class="btn-icon favorite" data-state="off" onclick="toggleState(this);"></button>
+						</div>
+					</div>
+					<div>
+						<div class="product-preview">
+							<div>
+								<a href="product.html">
+									<img src="img/products/filadelfia.png" alt="">
+									<h5>Ролл «Филадельфия»</h5>
+								</a>
+								<div class="ingredients">лосось, сливочный сыр, огурец, рис, нори</div>
+							</div>
+							<div class="d-md-flex justify-content-between align-items-center">
+								<div class="price d-flex flex-row flex-md-column align-items-center align-items-md-start justify-content-between mb-2 mb-md-0">
+									<div class="primary">400 грамм</div>
+									<div class="d-flex flex-wrap flex-row-reverse flex-md-row align-items-center">
+										<span class="fw-5 fs-15 align-middle">300 ₽</span>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<div class="add-count">
+										<button class="btn-mini" type="button">
+											<img src="img/icons/minus2.svg" alt="">
+										</button>
+										<input type="number" placeholder="0" value="1">
+										<button class="btn-mini" type="button">
+											<img src="img/icons/plus2.svg" alt="">
+										</button>
+									</div>
+									<button type="button" class="add-prod" onclick="this.previousElementSibling.style.marginTop='0';">Добавить</button>
+								</div>
+							</div>
+							<button type="button" class="btn-icon compare" data-state="on" onclick="toggleState(this);"></button>
+							<button type="button" class="btn-icon favorite" data-state="off" onclick="toggleState(this);"></button>
+						</div>
+					</div>
+					<div>
+						<div class="product-preview">
+							<div>
+								<a href="product.html">
+									<img src="img/products/margarita.png" alt="">
+									<h5>Пицца «Маргарита»</h5>
+								</a>
+								<div class="ingredients">Тесто, томатный соус, сыр, томаты, базилик, орегано</div>
+								<div class="switch">
+									<div class="indicator"></div>
+									<button type="button" class="switch-option" onclick="switchTo(this);">25 см</button>
+									<button type="button" class="switch-option active" onclick="switchTo(this);">30 см</button>
+									<button type="button" class="switch-option" onclick="switchTo(this);">35 см</button>
+								</div>
+							</div>
+							<div class="d-md-flex justify-content-between align-items-center">
+								<div class="price d-flex flex-row flex-md-column align-items-center align-items-md-start justify-content-between mb-2 mb-md-0">
+									<div class="primary">400 грамм</div>
+									<div class="d-flex flex-wrap flex-row-reverse flex-md-row align-items-center">
+										<span class="fw-5 fs-15 align-middle">300 ₽</span>
+										<span class="gray text-decoration-line-through align-middle me-1 me-md-0 ms-1">500 ₽</span>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<div class="add-count">
+										<button class="btn-mini" type="button">
+											<img src="img/icons/minus2.svg" alt="">
+										</button>
+										<input type="number" placeholder="0" value="1">
+										<button class="btn-mini" type="button">
+											<img src="img/icons/plus2.svg" alt="">
+										</button>
+									</div>
+									<button type="button" class="add-prod" onclick="this.previousElementSibling.style.marginTop='0';">Добавить</button>
+								</div>
+							</div>
+							<button type="button" class="btn-icon compare" data-state="on" onclick="toggleState(this);"></button>
+							<button type="button" class="btn-icon favorite" data-state="off" onclick="toggleState(this);"></button>
+						</div>
+					</div>
+					<div>
+						<div class="product-preview">
+							<div>
+								<a href="product.html">
+									<img src="img/products/margarita.png" alt="">
+									<h5>Пицца «Фрутти ди Маро»</h5>
+								</a>
+								<div class="ingredients">Тесто, томатный соус, сыр, томаты, базилик, орегано</div>
+								<div class="switch">
+									<div class="indicator"></div>
+									<button type="button" class="switch-option" onclick="switchTo(this);">25 см</button>
+									<button type="button" class="switch-option active" onclick="switchTo(this);">30 см</button>
+								</div>
+							</div>
+							<div class="d-md-flex justify-content-between align-items-center">
+								<div class="price d-flex flex-row flex-md-column align-items-center align-items-md-start justify-content-between mb-2 mb-md-0">
+									<div class="primary">400 грамм</div>
+									<div class="d-flex flex-wrap flex-row-reverse flex-md-row align-items-center">
+										<span class="fw-5 fs-15 align-middle">300 ₽</span>
+										<span class="gray text-decoration-line-through align-middle me-1 me-md-0 ms-1">500 ₽</span>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<div class="add-count">
+										<button class="btn-mini" type="button">
+											<img src="img/icons/minus2.svg" alt="">
+										</button>
+										<input type="number" placeholder="0" value="1">
+										<button class="btn-mini" type="button">
+											<img src="img/icons/plus2.svg" alt="">
+										</button>
+									</div>
+									<button type="button" class="add-prod" onclick="this.previousElementSibling.style.marginTop='0';">Добавить</button>
+								</div>
+							</div>
+							<button type="button" class="btn-icon compare" data-state="on" onclick="toggleState(this);"></button>
+							<button type="button" class="btn-icon favorite" data-state="off" onclick="toggleState(this);"></button>
+						</div>
+					</div>
+					<div>
+						<div class="product-preview">
+							<div>
+								<a href="product.html">
+									<img src="img/products/filadelfia.png" alt="">
+									<h5>Ролл «Филадельфия»</h5>
+								</a>
+								<div class="ingredients">лосось, сливочный сыр, огурец, рис, нори</div>
+							</div>
+							<div class="d-md-flex justify-content-between align-items-center">
+								<div class="price d-flex flex-row flex-md-column align-items-center align-items-md-start justify-content-between mb-2 mb-md-0">
+									<div class="primary">400 грамм</div>
+									<div class="d-flex flex-wrap flex-row-reverse flex-md-row align-items-center">
+										<span class="fw-5 fs-15 align-middle">300 ₽</span>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<div class="add-count">
+										<button class="btn-mini" type="button">
+											<img src="img/icons/minus2.svg" alt="">
+										</button>
+										<input type="number" placeholder="0" value="1">
+										<button class="btn-mini" type="button">
+											<img src="img/icons/plus2.svg" alt="">
+										</button>
+									</div>
+									<button type="button" class="add-prod" onclick="this.previousElementSibling.style.marginTop='0';">Добавить</button>
+								</div>
+							</div>
+							<button type="button" class="btn-icon compare" data-state="on" onclick="toggleState(this);"></button>
+							<button type="button" class="btn-icon favorite" data-state="off" onclick="toggleState(this);"></button>
+						</div>
+					</div>
+					<div>
+						<div class="product-preview">
+							<div>
+								<a href="product.html">
+									<img src="img/products/margarita.png" alt="">
+									<h5>Пицца «Маргарита»</h5>
+								</a>
+								<div class="ingredients">Тесто, томатный соус, сыр, томаты, базилик, орегано</div>
+								<div class="switch">
+									<div class="indicator"></div>
+									<button type="button" class="switch-option" onclick="switchTo(this);">25 см</button>
+									<button type="button" class="switch-option active" onclick="switchTo(this);">30 см</button>
+									<button type="button" class="switch-option" onclick="switchTo(this);">35 см</button>
+								</div>
+							</div>
+							<div class="d-md-flex justify-content-between align-items-center">
+								<div class="price d-flex flex-row flex-md-column align-items-center align-items-md-start justify-content-between mb-2 mb-md-0">
+									<div class="primary">400 грамм</div>
+									<div class="d-flex flex-wrap flex-row-reverse flex-md-row align-items-center">
+										<span class="fw-5 fs-15 align-middle">300 ₽</span>
+										<span class="gray text-decoration-line-through align-middle me-1 me-md-0 ms-1">500 ₽</span>
+									</div>
+								</div>
+								<div class="add-to-cart">
+									<div class="add-count">
+										<button class="btn-mini" type="button">
+											<img src="img/icons/minus2.svg" alt="">
+										</button>
+										<input type="number" placeholder="0" value="1">
+										<button class="btn-mini" type="button">
+											<img src="img/icons/plus2.svg" alt="">
+										</button>
+									</div>
+									<button type="button" class="add-prod" onclick="this.previousElementSibling.style.marginTop='0';">Добавить</button>
+								</div>
+							</div>
+							<button type="button" class="btn-icon compare" data-state="on" onclick="toggleState(this);"></button>
+							<button type="button" class="btn-icon favorite" data-state="off" onclick="toggleState(this);"></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="d-none d-md-block">
+		<div class="container">
+			<div class="row justify-content-between">
+				<div class="col-3 col-lg-4 col-xl-3">
+					<div class="row row-cols-lg-2">
+						<div>
+							<button type="button" class="white fs-13 d-block d-lg-none mb-2"
+								onclick="this.nextElementSibling.classList.toggle('d-none')">
+								<span class="me-3">Каталог</span>
+								<svg width="10" height="6" viewBox="0 0 10 6" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path d="M0.999878 0.999939L4.99988 4.99994L8.99988 0.999939" stroke="#fff"
+										stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+								</svg>
+							</button>
+							<nav class="d-none d-lg-block">
+								<ul>
+									<li><a href="categorie.html">Супы</a></li>
+									<li><a href="categorie.html">Бургеры</a></li>
+									<li><a href="categorie.html">Пицца</a></li>
+									<li><a href="categorie.html">Салаты</a></li>
+									<li><a href="categorie.html">Роллы</a></li>
+									<li><a href="categorie.html">Паста</a></li>
+									<li><a href="categorie.html">Горячие закуски</a></li>
+									<li><a href="categorie.html">Детское меню</a></li>
+								</ul>
+							</nav>
+						</div>
+						<div class="mt-3 mt-lg-0">
+							<button type="button" class="white fs-13 d-block d-lg-none mb-2"
+								onclick="this.nextElementSibling.classList.toggle('d-none')">
+								<span class="me-3">Меню</span>
+								<svg width="10" height="6" viewBox="0 0 10 6" fill="none"
+									xmlns="http://www.w3.org/2000/svg">
+									<path d="M0.999878 0.999939L4.99988 4.99994L8.99988 0.999939" stroke="#fff"
+										stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+								</svg>
+							</button>
+							<nav class="d-none d-lg-block">
+								<ul>
+									<li><a href="">Полуфабрикаты</a></li>
+									<li><a href="">Напитки</a></li>
+									<li><a href="about.html">О нас</a></li>
+									<li><a href="delivery.html">Доставка и оплата</a></li>
+									<li><a href="">Вакансии</a></li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+				<div class="col-4 col-xl-3 text-center d-flex flex-column justify-content-between">
+					<div class="mb-3 mb-lg-0">
+						<a href="#" class="d-block mb-2 mb-lg-4"><img src="img/logo.svg" alt="Название сайта"
+								class="img-fluid"></a>
+						<div><a href="#" class="primary">Политика конфиденциальности</a></div>
+					</div>
+					<div>
+						<div class="mb-2 mb-lg-3">Мы в социальных сетях:</div>
+						<div class="d-flex justify-content-center">
+							<a href="#" class="social" target="_blank">
+								<img src="img/icons/instagram.svg" alt="">
+							</a>
+							<a href="#" class="social" target="_blank">
+								<img src="img/icons/whatsapp.svg" alt="">
+							</a>
+							<a href="#" class="social" target="_blank">
+								<img src="img/icons/phone2.svg" alt="">
+							</a>
+							<a href="#" class="social" target="_blank">
+								<img src="img/icons/youtube.svg" alt="">
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-4 col-xl-3 d-flex flex-column justify-content-between">
+					<div>
+						<div class="d-flex align-items-start mb-3">
+							<img src="img/icons/map-pin3.svg" alt="" class="me-2">
+							<div>Мы находимся по адресу: <br>
+								г. Казань, ул. Достоевского, д. 45</div>
+						</div>
+						<div class="d-flex align-items-start">
+							<img src="img/icons/phone3.svg" alt="" class="me-2">
+							<div><a href="tel:+79879878787">+7 (987) 987-87-87</a></div>
+						</div>
+					</div>
+					<div>
+						<a href="http://asmpromo.ru/" alt="Создание и продвижение сайтов"
+							title="Создание и продвижение сайтов" target="_blank"
+							class="d-flex justify-content-end align-items-center">
+							<div class="text-end">Создание и продвижение сайтов</div>
+							<img src="img/asm.svg" alt="" class="ms-3">
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- mobile -->
+	<footer class="mobile d-flex d-md-none">
+		<a href="index.html" class="link active">
+			<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+				<path d="M3 9L12 2L21 9V20C21 20.5304 20.7893 21.0391 20.4142 21.4142C20.0391 21.7893 19.5304 22 19 22H15.5H12H8.5H5C4.46957 22 3.96086 21.7893 3.58579 21.4142C3.21071 21.0391 3 20.5304 3 20V9Z" />
+				<path d="M8 22V12H16V22" />
+			</svg>
+		</a>
+		<a href="" class="link">
+			<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+				<path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" />
+				<path d="M21 20.9999L16.65 16.6499" />
+			</svg>
+		</a>
+		<a href="" class="link">
+			<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+				<path d="M21 4H3C1.89543 4 1 4.89543 1 6V18C1 19.1046 1.89543 20 3 20H21C22.1046 20 23 19.1046 23 18V6C23 4.89543 22.1046 4 21 4Z" />
+				<path d="M1 10H23" />
+			</svg>
+		</a>
+		<a href="" class="link-2">
+			<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+				<path d="M22.4043 12.3107C22.3077 12.1131 22.3077 11.8865 22.4043 11.689L23.2994 9.85783C23.7978 8.83826 23.4029 7.62303 22.4004 7.09115L20.6 6.13584C20.4057 6.03281 20.2726 5.84943 20.2346 5.63292L19.8824 3.62532C19.6864 2.50755 18.6524 1.75643 17.5289 1.91538L15.5108 2.20085C15.293 2.2316 15.0776 2.16157 14.9196 2.00871L13.4547 0.59159C12.6391 -0.197499 11.3613 -0.197546 10.5456 0.59159L9.08072 2.00885C8.92265 2.16175 8.70726 2.23164 8.48948 2.20099L6.47139 1.91552C5.34756 1.75647 4.31398 2.50769 4.1179 3.62546L3.76578 5.63297C3.72776 5.84953 3.59459 6.03286 3.40039 6.13593L1.59993 7.09124C0.597468 7.62308 0.202595 8.8384 0.700967 9.85797L1.59604 11.6891C1.6926 11.8867 1.6926 12.1133 1.59604 12.3108L0.70092 14.1419C0.202548 15.1615 0.59742 16.3767 1.59988 16.9086L3.40034 17.8639C3.59459 17.9669 3.72776 18.1503 3.76578 18.3668L4.1179 20.3744C4.2964 21.392 5.16893 22.1056 6.17172 22.1055C6.27048 22.1055 6.3707 22.0986 6.47143 22.0843L8.48953 21.7988C8.70717 21.768 8.9227 21.8381 9.08076 21.991L10.5456 23.4081C10.9535 23.8027 11.4768 23.9999 12.0002 23.9999C12.5234 23.9998 13.047 23.8026 13.4547 23.4081L14.9196 21.991C15.0777 21.8381 15.2931 21.7683 15.5108 21.7988L17.5289 22.0843C18.6529 22.2433 19.6864 21.4921 19.8824 20.3744L20.2346 18.3669C20.2726 18.1503 20.4058 17.967 20.6 17.8639L22.4004 16.9086C23.4029 16.3767 23.7978 15.1614 23.2994 14.1419L22.4043 12.3107ZM21.7517 15.6858L19.9512 16.6411C19.3772 16.9457 18.9835 17.4875 18.8712 18.1276L18.5191 20.1352C18.4528 20.5133 18.1031 20.7674 17.7228 20.7137L15.7047 20.4282C15.0611 20.3371 14.4243 20.5442 13.9572 20.996L12.4923 22.4131C12.2164 22.68 11.784 22.68 11.508 22.4131L10.0431 20.996C9.64837 20.6141 9.13228 20.4071 8.5935 20.4071C8.49478 20.4071 8.39527 20.4141 8.29561 20.4282L6.27751 20.7136C5.89755 20.7674 5.54763 20.5133 5.48125 20.1351L5.12908 18.1275C5.01677 17.4874 4.62312 16.9456 4.04904 16.641L2.24858 15.6857C1.9094 15.5058 1.7758 15.0946 1.94441 14.7497L2.83953 12.9185C3.12491 12.3346 3.12491 11.665 2.83953 11.0811L1.94441 9.24996C1.7758 8.90501 1.9094 8.49387 2.24858 8.31392L4.04904 7.35861C4.62307 7.05398 5.01677 6.5122 5.12903 5.87208L5.48116 3.86452C5.54753 3.48634 5.89712 3.23228 6.27742 3.286L8.29552 3.57146C8.93887 3.66254 9.57595 3.4555 10.0431 3.00367L11.508 1.58655C11.7839 1.31965 12.2162 1.31965 12.4922 1.58655L13.9571 3.00367C14.4242 3.45554 15.0612 3.66254 15.7046 3.57146L17.7227 3.286C18.1027 3.23223 18.4527 3.48634 18.519 3.86452L18.8711 5.87212C18.9834 6.51224 19.3771 7.05407 19.9512 7.35861L21.7516 8.31392C22.0908 8.49387 22.2244 8.90501 22.0558 9.24996L21.1607 11.0811C20.8753 11.6649 20.8753 12.3346 21.1607 12.9185L22.0558 14.7496C22.2244 15.0946 22.0908 15.5058 21.7517 15.6858Z" />
+				<path d="M17.0571 6.94294C16.7869 6.67266 16.3486 6.67266 16.0783 6.94294L6.94294 16.0784C6.67266 16.3486 6.67266 16.7869 6.94294 17.0572C7.07808 17.1923 7.25522 17.2599 7.43232 17.2599C7.60941 17.2599 7.7866 17.1923 7.92169 17.0572L17.0571 7.92178C17.3274 7.65146 17.3274 7.21327 17.0571 6.94294Z" />
+				<path d="M9.2316 5.771C7.83229 5.771 6.69385 6.90944 6.69385 8.30875C6.69385 9.70805 7.83229 10.8465 9.2316 10.8465C10.6309 10.8465 11.7693 9.70805 11.7693 8.30875C11.7693 6.90944 10.6309 5.771 9.2316 5.771ZM9.2316 9.46224C8.59555 9.46224 8.0781 8.94479 8.0781 8.3087C8.0781 7.67266 8.59555 7.15521 9.2316 7.15521C9.86764 7.15521 10.3851 7.67266 10.3851 8.3087C10.3851 8.94479 9.86764 9.46224 9.2316 9.46224Z" />
+				<path d="M14.7685 13.1536C13.3692 13.1536 12.2307 14.292 12.2307 15.6913C12.2307 17.0906 13.3692 18.2291 14.7685 18.2291C16.1678 18.2291 17.3062 17.0906 17.3062 15.6913C17.3062 14.292 16.1678 13.1536 14.7685 13.1536ZM14.7685 16.8448C14.1324 16.8448 13.6149 16.3274 13.6149 15.6913C13.6149 15.0553 14.1324 14.5378 14.7685 14.5378C15.4045 14.5378 15.922 15.0553 15.922 15.6913C15.922 16.3274 15.4045 16.8448 14.7685 16.8448Z" />
+			</svg>
+		</a>
+		<a href="" class="link">
+			<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+				<path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" />
+				<path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" />
+			</svg>
+		</a>
+	</footer>
+
+	<!-- right menu -->
+	<div class="offcanvas offcanvas-end" tabindex="-1" id="right-menu">
+		<div class="offcanvas-body">
+			<nav>
+				<button type="button" data-bs-toggle="modal" data-bs-target="#entrance" class="btn-entrance d-flex d-md-none">
+					<img src="img/icons/user-white.svg" alt="">
+					<span class="fw-5">Войти</span>
+				</button>
+				<button type="button" data-bs-toggle="modal" data-bs-target="#city" class="d-flex d-md-none align-items-center mb-4">
+					<img src="img/icons/map-pin.svg" alt="город" class="icon me-2">
+					<span class="fw-5 bb-dash">г. Казань</span>
+					<img src="img/icons/chevron-down.svg" alt="выбрать" class="ms-2">
+				</button>
+				<ul>
+					<li class="d-block d-md-none">
+						<a href="#">
+							<img src="img/icons/shopping-cart2.svg" alt="Корзина" class="icon me-2">
+							Корзина
+							<span class="count ms-2">16</span>
+						</a>
+					</li>
+					<li>
+						<a href="menu.html">
+							<img src="img/icons/menu.svg" alt="Меню" class="icon me-2">
+							Меню
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="img/icons/favorites.svg" alt="Избранное" class="icon me-2">
+							Избранное
+						</a>
+					</li>
+					<li class="d-block d-md-none">
+						<a href="#">
+							<img src="img/icons/bar-chart2.svg" alt="Сравнение" class="icon me-2">
+							Сравнение
+						</a>
+					</li>
+					<li>
+						<a href="delivery.html">
+							<img src="img/icons/delivery.svg" alt="Доставка и оплата" class="icon me-2">
+							Доставка и оплата
+						</a>
+					</li>
+					<li>
+						<a href="about.html">
+							<img src="img/icons/info.svg" alt="О нас" class="icon me-2">
+							О нас
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							<img src="img/icons/vacancy.svg" alt="Вакансии" class="icon me-2">
+							Вакансии
+						</a>
+					</li>
+				</ul>
+			</nav>
+			<div class="mt-4 d-block d-md-none">
+				<a href="tel:+79879877878" class="d-flex align-items-center mb-4">
+					<img src="img/icons/phone.svg" alt="телефон" class="icon me-2">
+					<span class="fw-5">+7 (987) 987-78-78</span>
+				</a>
+				<div class="d-flex align-items-center">
+					<img src="img/icons/clock.svg" alt="время" class="icon me-2">
+					<span class="fw-5">с 10:00 до 21:00</span>
+				</div>
+			</div>
+			<button type="button" class="btn-close" data-bs-dismiss="offcanvas">
+				<img src="img/icons/close.svg" alt="">
+			</button>
+		</div>
+
+	</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="city" tabindex="-1" aria-hidden="true">
+		<div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+			<div class="modal-content">
+				<button type="button" class="btn-close" data-bs-dismiss="modal">
+					<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+						<path d="M18 6L6 18"/>
+						<path d="M6 6L18 18"/>
+					</svg>						
+				</button>
+				<div class="modal-body">
+					<h5 class="text-start">Выберите свой город:</h5>
+					<form action="">
+						<input type="search" placeholder="Начните ввод..." class="search-in-list mb-4">
+						<div class="search-list">
+							<div class="text-form mb-2 mb-sm-3 search-item">
+								<input type="radio" name="city" value="Москва" required="" oninput="verifyInput(this.closest('form'));">
+								<div>Москва</div>
+							</div>
+							<div class="text-form mb-2 mb-sm-3 search-item">
+								<input type="radio" name="city" value="Санкт-Петербург" required="" oninput="verifyInput(this.closest('form'));">
+								<div>Санкт-Петербург</div>
+							</div>
+							<div class="text-form mb-2 mb-sm-3 search-item">
+								<input type="radio" name="city" value="Владивосток" required="" oninput="verifyInput(this.closest('form'));">
+								<div>Владивосток</div>
+							</div>
+							<div class="text-form mb-2 mb-sm-3 search-item">
+								<input type="radio" name="city" value="Самара" required="" oninput="verifyInput(this.closest('form'));">
+								<div>Самара</div>
+							</div>
+							<div class="text-form mb-2 mb-sm-3 search-item">
+								<input type="radio" name="city" value="Казань" required="" oninput="verifyInput(this.closest('form'));">
+								<div>Казань</div>
+							</div>
+							<div class="text-form mb-2 mb-sm-3 search-item">
+								<input type="radio" name="city" value="Ростов на Дону" required="" oninput="verifyInput(this.closest('form'));">
+								<div>Ростов на Дону</div>
+							</div>
+							<div class="text-form mb-2 mb-sm-3 search-item">
+								<input type="radio" name="city" value="Нижний Новгород" required="" oninput="verifyInput(this.closest('form'));">
+								<div>Нижний Новгород</div>
+							</div>
+						</div>
+						<button type="submit" disabled="disabled" class="verifiable-btn btn btn-1 mt-2 mt-sm-3 mt-md-4 py-3 px-5 mx-auto">Выбрать</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="entrance" tabindex="-1" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+			<div class="modal-content">
+				<button type="button" class="btn-close" data-bs-dismiss="modal">
+					<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+						<path d="M18 6L6 18"/>
+						<path d="M6 6L18 18"/>
+					</svg>						
+				</button>
+				<div class="modal-body">
+					<h5 class="text-center mb-4 mb-md-5">Вход</h5>
+					<form>
+						<div class="mb-2 mb-md-3">Номер телефона</div>
+						<input type="text" placeholder="+7 000 000 00 00" class="mb-3 mb-md-4">
+						<div class="mb-2 mb-md-3">Пароль</div>
+						<div class="password mb-3 mb-md-4">
+							<input type="password" name="password" autocomplete="current-password" minlength="4" maxlength="8" placeholder="Пароль" data-state="invisible">
+							<button type="button" data-state="invisible" class="pass_btn" onclick="change_state(this);"></button>
+						</div>
+						<div class="d-flex flex-column flex-sm-row align-items-center my-4 my-md-5">
+							<button type="submit" class="btn btn-1 px-5 py-sm-3 me-sm-3 me-md-4 mb-3 mb-sm-0">Войти</button>
+							<button type="button" class="blue" data-bs-toggle="modal" data-bs-target="#password-recovery-1" data-bs-dismiss="modal">Забыли пароль?</button>
+						</div>
+						<div class="d-flex flex-wrap align-items-center">
+							<span>У вас ещё нет учётной записи?</span>
+							<button type="button" class="blue ms-1" data-bs-toggle="modal" data-bs-target="#registration" data-bs-dismiss="modal">Регистрация</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="password-recovery-1" tabindex="-1" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+			<div class="modal-content">
+				<button type="button" class="btn-close" data-bs-dismiss="modal">
+					<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+						<path d="M18 6L6 18"/>
+						<path d="M6 6L18 18"/>
+					</svg>						
+				</button>
+				<div class="modal-body">
+					<h5 class="text-center">Восстановление пароля</h5>
+					<div class="text-center mb-3 mb-md-5">Введите номер телефона, на который вы регистрировались.</div>
+					<form>
+						<input type="text" placeholder="+7 000 000 00 00" class="mb-3 mb-md-5">
+						<button type="submit" data-bs-toggle="modal" data-bs-target="#password-recovery-2" data-bs-dismiss="modal" class="btn btn-1 py-sm-3 mb-3 mb-md-4">Выслать код</button>
+						<button type="button" class="blue ms-1" data-bs-toggle="modal" data-bs-target="#entrance" data-bs-dismiss="modal">Я вспомнил пароль</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="password-recovery-2" tabindex="-1" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+			<div class="modal-content">
+				<button type="button" class="btn-close" data-bs-dismiss="modal">
+					<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+						<path d="M18 6L6 18"/>
+						<path d="M6 6L18 18"/>
+					</svg>						
+				</button>
+				<div class="modal-body">
+					<h5 class="text-center">Восстановление пароля</h5>
+					<div class="text-center mb-3 mb-md-5">На номер +7 (987) 897-67-67 выслано СМС-сообщение с кодом подтверждения.</div>
+					<form>
+						<input type="text" placeholder="Код подтверждения" class="mb-3 mb-md-5">
+						<button type="submit" data-bs-toggle="modal" data-bs-target="#password-recovery-3" data-bs-dismiss="modal" class="btn btn-1 py-sm-3 mb-3 mb-md-4">Подтвердить</button>
+						<button type="button" class="blue ms-1" data-bs-toggle="modal" data-bs-target="#entrance" data-bs-dismiss="modal">Я вспомнил пароль</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="password-recovery-3" tabindex="-1" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+			<div class="modal-content">
+				<button type="button" class="btn-close" data-bs-dismiss="modal">
+					<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+						<path d="M18 6L6 18"/>
+						<path d="M6 6L18 18"/>
+					</svg>						
+				</button>
+				<div class="modal-body">
+					<h5 class="text-center mb-5">Восстановление пароля</h5>
+					<form>
+						<div class="mb-2 mb-md-3">Новый пароль</div>
+						<div class="password mb-4 mb-md-5">
+							<input type="password" name="password" autocomplete="current-password" minlength="4" maxlength="8" placeholder="Пароль" data-state="invisible">
+							<button type="button" data-state="invisible" class="pass_btn" onclick="change_state(this);"></button>
+						</div>
+						<button type="submit" class="btn btn-1 py-sm-3 mb-3 mb-md-4">Далее</button>
+						<button type="button" class="blue ms-1" data-bs-toggle="modal" data-bs-target="#entrance" data-bs-dismiss="modal">Я вспомнил пароль</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="registration" tabindex="-1" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+			<div class="modal-content">
+				<button type="button" class="btn-close" data-bs-dismiss="modal">
+					<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+						<path d="M18 6L6 18"/>
+						<path d="M6 6L18 18"/>
+					</svg>						
+				</button>
+				<div class="modal-body">
+					<h5 class="text-center mb-4 mb-md-5">Регистрация</h5>
+					<form>
+						<div class="mb-2 mb-md-3">Номер телефона</div>
+						<input type="text" placeholder="+7 000 000 00 00" class="mb-3 mb-md-5">
+						<button type="submit" data-bs-toggle="modal" data-bs-target="#confirmation" data-bs-dismiss="modal" class="btn btn-1 py-sm-3 mb-4 mb-md-5">Выслать код</button>
+						<div class="d-flex flex-wrap align-items-center">
+							<span>У вас уже есть учётная запись?</span>
+							<button type="button" class="blue ms-1" data-bs-toggle="modal" data-bs-target="#entrance" data-bs-dismiss="modal">Вход</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="confirmation" tabindex="-1" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+			<div class="modal-content">
+				<button type="button" class="btn-close" data-bs-dismiss="modal">
+					<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+						<path d="M18 6L6 18"/>
+						<path d="M6 6L18 18"/>
+					</svg>						
+				</button>
+				<div class="modal-body">
+					<h5 class="text-center">Подтвердите номер телефона</h5>
+					<div class="text-center mb-3 mb-md-5">На номер +7 (987) 897-67-67 выслано СМС-сообщение с кодом подтверждения.</div>
+					<form>
+						<input type="text" placeholder="Код подтверждения" class="mb-4 mb-md-5">
+						<button type="submit" data-bs-toggle="modal" data-bs-target="#pick-password" data-bs-dismiss="modal" class="btn btn-1 py-sm-3 mb-4 mb-md-5">Подтвердить</button>
+						<div class="d-flex flex-wrap align-items-center">
+							<span>У вас уже есть учётная запись?</span> 
+							<button type="button" class="blue ms-1" data-bs-toggle="modal" data-bs-target="#entrance" data-bs-dismiss="modal">Вход</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="pick-password" tabindex="-1" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+			<div class="modal-content">
+				<button type="button" class="btn-close" data-bs-dismiss="modal">
+					<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+						<path d="M18 6L6 18"/>
+						<path d="M6 6L18 18"/>
+					</svg>						
+				</button>
+				<div class="modal-body">
+					<h5 class="text-center">Придумайте пароль</h5>
+					<form>
+						<div class="password mb-4 mb-md-5">
+							<input type="password" name="password" autocomplete="current-password" minlength="4" maxlength="8" placeholder="Пароль" data-state="invisible">
+							<button type="button" data-state="invisible" class="pass_btn" onclick="change_state(this);"></button>
+						</div>
+						<button type="submit" class="btn btn-1 py-sm-3 mb-4 mb-md-5">Регистрация</button>
+						<div class="d-flex flex-wrap align-items-center">
+							<span>У вас уже есть учётная запись?</span>
+							<button type="button" class="blue ms-1" data-bs-toggle="modal" data-bs-target="#entrance" data-bs-dismiss="modal">Вход</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Scripts -->
+	<script src="js/bootstrap.bundle.min.js"></script>
+	<script src="js/swiper-bundle.min.js"></script>
+	<script src="js/sliders.js"></script>
+	<script src="js/main.js"></script>
+</body>
+</html>
