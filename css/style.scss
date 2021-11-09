@@ -332,7 +332,7 @@ select {
       padding: 0.4em 0.25em;
     }
     &.active {
-      color: $minor;
+      color: $primary;
       pointer-events: none;
       cursor: auto;
     }
@@ -580,14 +580,18 @@ button {
       }
     }
   }
-  &-svg2 {
+  &-svg-2 {
     @include flex-center();
     svg {
-      width: 1.5em;
-      height: 1.5em;
+      width: 2.5em;
+      height: 2.5em;
       fill: none;
       path {
-        fill: #828282;
+        stroke: white;
+        stroke-width: 2.75px;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        transition: all .3s ease-in-out;
       }
     }
     &:hover,
@@ -601,7 +605,7 @@ button {
     &:active {
       svg {
         path {
-          fill: $dark-orange;
+          fill: $dark-primary;
         }
       }
     }
@@ -651,20 +655,7 @@ h5 {
   h3, h4 {font-size: 1.5em;}
   h5 {font-size: 1.2em;}
 }
-@media (max-width: 767px) {
-  h1,  h2 {
-    font-size: 1.5em;
-    text-align: left;
-  }
-  h3,  h4 {
-    font-size: 1.1em;
-  }
-  h5 {font-size: 1em;}
-}
-@media (max-width: 575px) {
-  h1, h2 {font-size: 1.2em;}
-  h3, h4 {font-size: 1em;}
-}
+
 .title-font {font-family: $title-font;}
 .sec-font {font-family: $sec-font;}
 .fs {
@@ -839,17 +830,15 @@ body {
   }
   @media (max-width: 1399px) {
     font-size: 13px;
-    padding-top: 1.5em;
-  }
-  @media (max-width: 1199px) {
-    padding-top: 1em;
   }
   @media (max-width: 991px) {
     font-size: 12px;
   }
   @media (max-width: 767px) {
     font-size: 16px;
-    padding-top: 0px;
+  }
+  @media (max-width: 575px) {
+    font-size: 12px; 
   }
 }
 
@@ -861,7 +850,7 @@ header {
   width: 100%;
   z-index: 1000;
   @include flex-center();
-  background: url(../img/bg/bg1.png) no-repeat center top;
+  background: url(../img/bg/bg1.jpg) no-repeat center top;
   .container {
     display: flex;
     justify-content: space-between;
@@ -872,7 +861,9 @@ header {
         max-height: 4em;
         object-fit: contain;
         @media (max-width: 767px) {
-          max-width: 40px;
+          max-width: 70px;
+          max-height: 35px;
+          object-fit: contain;
         }
       }
     }
@@ -924,93 +915,7 @@ header {
       background-color:$primary;
       box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
     }
-    // .btn-icon {
-    //   @include flex-center;
-    //   position: relative;
-    //   &-del {
-    //     width: 1em;
-    //     height: 1.5em;
-    //     svg {
-    //       fill: none;
-    //       width: 0.8em;
-    //       height: 1em;
-    //       path {
-    //         fill: $gray-1;
-    //       }
-    //     }
-    //     &:hover,
-    //     &:focus {
-    //       svg {
-    //         path {
-    //           fill: $primary;
-    //         }
-    //       }
-    //     }
-    //     &:active {
-    //       svg {
-    //         path {
-    //           fill: $orange;
-    //         }
-    //       }
-    //     }
-    //   }
-    //   &-dark {
-    //     width: 3em;
-    //     height: 3em;
-    //     border-radius: 50%;
-    //     background-color: #2f2f2f;
-    //     svg {
-    //       width: 1.5em;
-    //       height: 1.5em;
-    //       fill: none;
-    //       path {
-    //         stroke: #fff;
-    //         stroke-width: 2px;
-    //         stroke-linecap: round;
-    //         stroke-linejoin: round;
-    //         transition: 300ms;
-    //         @media (max-width: 767px) {
-    //           stroke: $primary;
-    //           stroke-width: 2.75px;
-    //         }
-    //       }
-    //       @media (max-width: 767px) {
-    //         width: 2.2em;
-    //         height: 2.2em;
-    //       }
-    //     }
-    //     &:hover,
-    //     &:focus {
-    //       svg {
-    //         path {
-    //           stroke: $primary;
-    //         }
-    //       }
-    //     }
-    //     @media (max-width: 767px) {
-    //       width: 2em;
-    //       height: 2em;
-    //       border-radius: 0%;
-    //       background-color: transparent;
-    //     }
-    //   }
-      
-    //   &-orange {
-    //     width: 3em;
-    //     height: 3em;
-    //     svg {
-    //       width: 2.5em;
-    //       height: 2.5em;
-    //       fill: none;
-    //       path {
-    //         stroke: $primary;
-    //         stroke-width: 2.75px;
-    //         stroke-linecap: round;
-    //         stroke-linejoin: round;
-    //       }
-    //     }
-    //   }
-    // }
+    
     #toggle-cart {
       position: relative;
       .cart-preview {
@@ -1082,11 +987,12 @@ header {
 
 /* sec 1 */
 #sec-1 {
-  background-image: url(../img/bg/basil-1.png), url(../img/bg/bg1.png);
+  background-image: url(../img/bg/basil-1.png), url(../img/bg/bg1.jpg);
   background-repeat: no-repeat;
   background-position: left top, center top;
-  background-size: auto, cover;
+  background-size: auto 33%, 100% 100%;
   color: #fff;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 #main-slider {
   padding: 0em 0 4em;
@@ -1096,16 +1002,16 @@ header {
     object-fit: scale-down;
     filter: drop-shadow(0px 7px 12px #000000);
     @media (max-width: 1659px) {
-      height: 635px;
+      height: 730px;
     }
     @media (max-width: 1399px) {
-      height: 545px;
+      height: 625px;
     }
     @media (max-width: 1199px) {
-      height: 450px;
+      height: 520px;
     }
     @media (max-width: 991px) {
-      height: 330px;
+      height: 400px;
     }
   }
   .carousel-indicators {
@@ -1478,10 +1384,10 @@ main {
 /* sec 4 */
 #sec-4 {
   order: 4;
-  background-image: url(../img/bg/tomato-2.png), url(../img/bg/tomato-1.png), url(../img/bg/bg1.png);
+  background-image: url(../img/bg/tomato-2.png), url(../img/bg/tomato-1.png), url(../img/bg/bg1.jpg);
   background-repeat: no-repeat;
-  background-position: 45% 120%, 90% 10%, center top;
-  background-size: 24%, 12%, cover;
+  background-position: 50% 100%, 93% 10%, center top;
+  background-size: 15%, 12%, 100% 100%;
   color: #fff;
   padding: 4em 0 6em;
   &::before {
@@ -1493,6 +1399,11 @@ main {
     background-size: contain;
     width: 8%;
     height: 19em;
+    @media (max-width: 767px) {
+      top: -3em;
+      width: 6em;
+      height: 9em;
+    }
   }
   &::after {
     content: "";
@@ -1503,10 +1414,42 @@ main {
     background-size: contain;
     width: 8%;
     height: 10em;
+    @media (max-width: 767px) {
+      bottom: 0;
+      width: 5em;
+      height: 4em;
+    }
+  }
+  @media (max-width: 1199px) {
+    background-position: 55% 100%, 93% 10%, center top;
+  }
+  @media (max-width: 991px) {
+    background-position: 60% 100%, 93% 10%, center top;
   }
   @media (max-width: 767px) {
-    background-image: unset;
-    overflow: hidden;
+    background-position: 0% 40%, 95% 5%, center top;
+    background-size: 30%, 25%, 100% 100%;
+    margin-bottom: 0px;
+    .fs-11 {font-size: 1em;}
+  }
+  @media (max-width: 575px) {
+    background-position: 0% 28%, 95% 5%, center top;
+    padding: 2em 0 4em;
+  }
+  .about-collage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    @media (max-width: 767px) {
+      height: 450px;
+      width: 450px;
+      margin: 0 auto 1.5em;
+    }
+    @media (max-width: 575px) {
+      height: 300px;
+      width: 300px;
+      margin: 0 auto 1em;
+    }
   }
   #img-1 {
     position: absolute;
@@ -1514,13 +1457,61 @@ main {
     right: 20%;
     width: 224px;
     height: 224px;
+    @media (max-width: 1659px) {
+      right: 15%;
+    }
+    @media (max-width: 1399px) {
+      width: 180px;
+      height: 180px;
+    }
+    @media (max-width: 1199px) {
+      width: 150px;
+      height: 150px;
+      top: 5%;
+    }
+    @media (max-width: 991px) {
+      top: 0%; 
+      right: 10%;
+      width: 120px;
+      height: 120px;
+    }
+    @media (max-width: 767px) {
+      width: 33%;
+      height: 33%;
+      right: 15%;
+    }
   }
   #img-2 {
     position: absolute;
-    top: 10%;
+    top: calc(50% - 200px);
     left: 15%;
     width: 400px;
     height: 400px;
+    @media (max-width: 1659px) {
+      left: 10%;
+    }
+    @media (max-width: 1399px) {
+      left: 5%;
+      top: calc(50% - 150px);
+      width: 300px;
+      height: 300px;
+    }
+    @media (max-width: 1199px) {
+      top: calc(50% - 137px);
+      width: 275px;
+      height: 275px;
+    }
+    @media (max-width: 991px) {
+      top: calc(45% - 120px);
+      left: 0%;
+      width: 240px;
+      height: 240px;
+    }
+    @media (max-width: 767px) {
+      top: 20%;
+      width: 60%;
+      height: 60%;
+    }
   }
   #img-3 {
     position: absolute;
@@ -1528,27 +1519,37 @@ main {
     right: 10%;
     width: 300px;
     height: 300px;
+    @media (max-width: 1659px) {
+      right: 0%;
+    }
+    @media (max-width: 1399px) {
+      width: 250px;
+      height: 250px;
+    }
+    @media (max-width: 1199px) {
+      width: 215px;
+      height: 215px;
+    }
+    @media (max-width: 991px) {
+      width: 170px;
+      height: 170px;
+    }
+    @media (max-width: 767px) {
+      width: 42%;
+      height: 42%;
+    }
   }
 }
 .round-img {
   display: block;
   margin: 0 auto;
   border-radius: 50%;
-  border: 2px dashed $primary;
+  border: 2px dashed #fff;
   padding: 0.5em;
   object-fit: cover;
-  @media (max-width: 991px) {
-    max-width: 275px;
-    height: 275px;
-  }
   @media (max-width: 767px) {
-    max-width: 240px;
-    height: 240px;
-    margin-bottom: 1em;
-  }
-  @media (max-width: 575px) {
-    max-width: 40vw;
-    height: 40vw;
+    border: 1px dashed #fff;
+    padding: 0.25em;
   }
 }
 
@@ -1680,7 +1681,7 @@ main {
 /* sec 6 */
 #sec-6 {
   order: 7;
-  background-image: url(../img/bg/bg1.png);
+  background-image: url(../img/bg/bg1.jpg);
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
@@ -2644,39 +2645,19 @@ footer {
     position: sticky;
     bottom: 0px;
     left: 0px;
-    height: 50px;
+    height: 46px;
     padding: 0 1em;
-    background: #ffffff;
+    background: $minor;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     justify-content: space-around;
     align-items: center;
     .link {
       svg {
-        width: 1.5em;
-        height: 1.5em;
+        width: 2em;
+        height: 2em;
         fill: none;
         path {
-          stroke: $gray-3;
-          stroke-width: 2px;
-          stroke-linecap: round;
-          stroke-linejoin: round;
-        }
-      }
-      &.active {
-        svg {
-          path {
-            stroke: $primary;
-          }
-        }
-      }
-    }
-    .link-2 {
-      svg {
-        width: 1.5em;
-        height: 1.5em;
-        fill: none;
-        path {
-          fill: $gray-3;
+          fill: $gray-5;
         }
       }
       &.active {
@@ -2724,52 +2705,53 @@ footer {
   }
 }
 
+.btn-close {
+  position: absolute;
+  top: 1em;
+  right: 0.5em;
+  width: 1.5em;
+  height: 1.5em;
+  padding: 0;
+  opacity: 1;
+  background: none;
+  @include flex-center();
+  svg {
+    width: 1rem;
+    height: 1rem;
+    fill: none;
+    path {
+      stroke: $gray-3;
+      stroke-width: 3px;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+  }
+  &:hover,
+  &:focus {
+    svg {
+      path {
+        stroke: $primary;
+      }
+    }
+  }
+  &:active {
+    svg {
+      path {
+        stroke: $dark-primary;
+      }
+    }
+  }
+}
+
 /* right menu */
 .offcanvas {
   &.offcanvas-end {
-    border-radius: 20px 0px 0px 20px;
+    border-radius: 0px;
     @media (max-width: 575px) {
       border-radius: 0px;
     }
     .offcanvas-body {
       padding: 3em 2em;
-      .btn-close {
-        position: absolute;
-        top: 1em;
-        right: 0.5em;
-        width: 1.5em;
-        height: 1.5em;
-        padding: 0;
-        opacity: 1;
-        background: none;
-        @include flex-center();
-        svg {
-          width: 1.5em;
-          height: 1.5em;
-          fill: none;
-          path {
-            stroke: #828282;
-            stroke-width: 2px;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-          }
-        }
-        &:hover,
-        &:focus {
-          svg {
-            path {
-              stroke: $primary;
-            }
-          }
-        }
-        &:active {
-          svg {
-            path {
-              stroke: $dark-orange;
-            }
-          }
-        }
-      }
     }
   }
   &#right-menu {
@@ -2797,6 +2779,8 @@ footer {
           a {
             display: flex;
             align-items: center;
+            font-family: $sec-font;
+            font-size: 1.2em;
             .count {
               @include flex-center;
               width: 1.6em;
