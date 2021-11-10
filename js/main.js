@@ -2,7 +2,9 @@
 // if (window.matchMedia("(min-width: 768px)").matches) {
 //   window.addEventListener('scroll', function() {
 //     let st = window.pageYOffset;
-//     if (st > 65) {
+//     let soop = getElementById("soop-menu");
+//     let soop_height = soop.pageY;
+//     if (st > soop_height) {
 //       document.querySelector('header').classList.add("h-sticky");
 //     } else {
 //       document.querySelector('header').classList.remove("h-sticky");
@@ -164,10 +166,12 @@ window.onload = function() {
 
 
   let cartPreview = document.getElementById('toggle-cart');
-  cartPreview.addEventListener('mouseenter', (event) => {
-    cartPreview.querySelector('.cart-preview').style.display = 'block';
-  });
-  cartPreview.addEventListener('mouseleave', (event) => {
-    cartPreview.querySelector('.cart-preview').style.display = 'none';
-  });
+  if(cartPreview!=null && window.matchMedia("(min-width: 768px)").matches) {
+    cartPreview.addEventListener('mouseenter', (event) => {
+      cartPreview.querySelector('.cart-preview').style.display = 'block';
+    });
+    cartPreview.addEventListener('mouseleave', (event) => {
+      cartPreview.querySelector('.cart-preview').style.display = 'none';
+    });
+  }
 }

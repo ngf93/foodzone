@@ -69,7 +69,7 @@ html {
     background-color: #bdbdbd;
   }
   &:active {
-    background-color: $orange;
+    background-color: $primary
   }
 }
 ::-webkit-scrollbar-button:vertical:start:decrement,
@@ -502,8 +502,8 @@ button {
     }
     &:active {
       color: #fff;
-      background: #e38800;
-      border: 1px solid #e38800;
+      background: #9C0322;
+      border: 1px solid #9C0322;
     }
   }
   &[disabled="disabled"] {
@@ -559,6 +559,10 @@ button {
       width: 2.5em;
       height: 2.5em;
       fill: none;
+      @media (max-width: 767px) {
+        width: 2em;
+        height: 2em;
+      }
       path {
         fill: white;
         transition: all .3s ease-in-out;
@@ -586,6 +590,10 @@ button {
       width: 2.5em;
       height: 2.5em;
       fill: none;
+      @media (max-width: 767px) {
+        width: 2em;
+        height: 2em;
+      }
       path {
         stroke: white;
         stroke-width: 2.75px;
@@ -598,14 +606,14 @@ button {
     &:focus {
       svg {
         path {
-          fill: $primary;
+          stroke: $primary;
         }
       }
     }
     &:active {
       svg {
         path {
-          fill: $dark-primary;
+          stroke: $dark-primary; 
         }
       }
     }
@@ -648,12 +656,19 @@ h5 {
 @media (max-width: 1399px) {
   h1, h2 {font-size: 2.5em;}
   h3, h4 {font-size: 1.75em;}
-  h5 {font-size: 1.35em;}
 }
 @media (max-width: 991px) {
   h1, h2 {font-size: 2.25em;}
   h3, h4 {font-size: 1.5em;}
-  h5 {font-size: 1.2em;}
+}
+@media (max-width: 767px) {
+  h1, h2 {font-size: 2em;}
+}
+@media (max-width: 575px) {
+  h1, h2 {
+    font-size: 1.8em;
+    text-align: left;
+  }
 }
 
 .title-font {font-family: $title-font;}
@@ -835,7 +850,7 @@ body {
     font-size: 12px;
   }
   @media (max-width: 767px) {
-    font-size: 16px;
+    font-size: 14px;
   }
   @media (max-width: 575px) {
     font-size: 12px; 
@@ -848,9 +863,21 @@ header {
   top: 0px;
   left: 0px;
   width: 100%;
-  z-index: 1000;
+  z-index: 100;
+  height: 100px; 
   @include flex-center();
   background: url(../img/bg/bg1.jpg) no-repeat center top;
+  @media (max-width: 1399px){
+    height: 85px;
+  }
+  @media (max-width: 991px){
+    height: 70px;
+  }
+  @media (max-width: 767px){
+    height: 54px;
+    display: flex;
+    align-items: center;
+  }
   .container {
     display: flex;
     justify-content: space-between;
@@ -914,6 +941,10 @@ header {
       color: #fff;
       background-color:$primary;
       box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+      @media (max-width: 767px){
+        right: -0.5em;
+        font-size: 0.8em;
+      }
     }
     
     #toggle-cart {
@@ -976,11 +1007,6 @@ header {
         }
       }
     }
-  }
-  @media (max-width: 767px) {
-    height: 54px;
-    display: flex;
-    align-items: center;
   }
 }
 
@@ -1070,8 +1096,17 @@ main {
   }
 }
 
-
-#sec-2 {order: 1;}
+/* section 2 */
+.sec-2 {
+  order: 2;
+  .btn-svg-2 {
+    svg {
+      path {
+        stroke: $gray-3;
+      }
+    }
+  }
+}
 .soops {
   position: relative;
   overflow: hidden;
@@ -1097,6 +1132,25 @@ main {
       color: #fff;
       background-color: $minor;
     }
+  }
+}
+#soop-menu {
+  position: sticky;
+  width: 100%;
+  left: 0px;
+  top: 100px;
+  z-index: 100;
+  background-color: #fff;
+  padding: 0.25em;
+  @media (max-width: 1399px){
+    top: 85px;
+  }
+  @media (max-width: 991px){
+    top: 70px;
+  }
+  @media (max-width: 767px) {
+    top: 54px;
+    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.06);
   }
 }
 .product-preview {
@@ -1342,9 +1396,9 @@ main {
   }
 }
 
+/* sec 3 */
 #sec-3 {order: 3;}
 /* product */
-
 .compare-categorie {
   background-color: $gray-6;
   height: 2em;
@@ -1950,7 +2004,7 @@ main {
   }
   button {
     border: 1px solid $primary;
-    box-shadow: 0px 0px 10px $orange;
+    // box-shadow: 0px 0px 10px $orange;
     padding: 0.6em 0;
     width: 120px;
     text-align: center;
@@ -2797,8 +2851,8 @@ footer {
       }
     }
     img.icon {
-      width: 1em;
-      height: 1em;
+      width: 1.25em;
+      height: 1.25em;
       object-fit: contain;
     }
   }
@@ -2880,13 +2934,12 @@ footer {
   background: #FFF;
   box-shadow: 0px 0px 8px rgba(179, 179, 179, 0.3);
   border: none;
-  border-radius: 1.8em;
+  border-radius: .5em;
   padding: 2em;
   @media (max-width: 991px) {
     width: 600px;
   }
   @media (max-width: 757px) {
-    border-radius: 1.2em;
     width: 450px;
     padding: 1.5em;
   }
