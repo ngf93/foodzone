@@ -1,17 +1,3 @@
-/* sticky header */
-// if (window.matchMedia("(min-width: 768px)").matches) {
-//   window.addEventListener('scroll', function() {
-//     let st = window.pageYOffset;
-//     let soop = getElementById("soop-menu");
-//     let soop_height = soop.pageY;
-//     if (st > soop_height) {
-//       document.querySelector('header').classList.add("h-sticky");
-//     } else {
-//       document.querySelector('header').classList.remove("h-sticky");
-//     }
-//   });
-// }
-
 /* compare and favorite buttons state */
 function toggleState(btn){
   btn.dataset.state = (btn.dataset.state == 'off') ? 'on' : 'off'

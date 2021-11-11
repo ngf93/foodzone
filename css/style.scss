@@ -1,9 +1,8 @@
 $main-font: "Roboto";
 $sec-font: "Rubik";
 $title-font: "Montserrat";
-$primary: #AD0426;
-$dark-primary: #8D0B25;
-$minor: #141A24;
+$primary: #ad0426;
+$minor: #141a24;
 $gray-1: #333333;
 $gray-2: #4F4F4F;
 $gray-3: #828282;
@@ -11,11 +10,7 @@ $gray-4: #BDBDBD;
 $gray-5: #E0E0E0;
 $gray-6: #F2F2F2;
 $red: #EB5757;
-
 $barcode: "code39";
-$cream: hsl(36, 100%, 90%);
-$orange: #ffcc80;
-$dark-orange: #be5b26;
 
 a,
 a:hover,
@@ -174,7 +169,7 @@ textarea {
     border: 1px solid $gray-3;
   }
   &:focus {
-    border: 1px solid $orange;
+    border: 1px solid $primary;
   }
 }
 input {
@@ -287,7 +282,7 @@ select {
     border: 1px solid $gray-3;
   }
   &:focus {
-    border: 1px solid $orange;
+    border: 1px solid $primary
   }
 }
 
@@ -442,7 +437,7 @@ select {
     margin-right: 0.5em;
     path {
       fill: none;
-      stroke: $orange;
+      stroke: $primary;
       stroke-width: 2px;
       stroke-linecap: round;
       stroke-linejoin: round;
@@ -482,8 +477,8 @@ button {
     &:hover,
     &:focus {
       color: #fff;
-      background: $dark-primary;
-      border: 1px solid $dark-primary;
+      background: darken($primary, 7%);
+      border: 1px solid darken($primary, 7%);
     }
     &:active {
       color: #fff;
@@ -522,35 +517,29 @@ button {
     background-position: center center;
     background-size: 1.5em 1.5em;
     transition: 250ms;
-    &.compare {
-      background-image: url(../img/icons/bar-chart.svg);
+    &.favorite {
+      background-image: url(../img/icons/heart.svg);
+      position: absolute;
+      top: 1em;
       right: 1em;
       @media (max-width: 767px) {
         top: 0.7em;
         right: 0.7em;
       }
     }
-    &.favorite {
-      background-image: url(../img/icons/heart.svg);
-      right: 4.5em;
-      @media (max-width: 767px) {
-        top: 0.7em;
-        right: 2.5em;
-      }
-    }
     &[data-state="off"] {
       background-color: $primary;
     }
     &[data-state="on"] {
-      background-color: $dark-primary;
+      background-color: darken($primary, 7%);
       &.favorite {
         background-image: url(../img/icons/heart2.svg);
       }
     }
     @media (max-width: 767px) {
-      width: 1.5em;
-      height: 1.5em;
-      background-size: 1em 1em;
+      width: 1.75em;
+      height: 1.75em;
+      background-size: 1.25em 1.25em;
     }
   }
   &-svg {
@@ -579,7 +568,7 @@ button {
     &:active {
       svg {
         path {
-          fill: $dark-primary;
+          fill: darken($primary, 7%);
         }
       }
     }
@@ -613,7 +602,7 @@ button {
     &:active {
       svg {
         path {
-          stroke: $dark-primary; 
+          stroke: darken($primary, 7%); 
         }
       }
     }
@@ -704,7 +693,6 @@ h5 {
 .gray-5 {color: $gray-5;}
 .blue {color: #2d9cdb;}
 .red {color: $red;}
-.dark-orange {color: $dark-orange;}
 .primary {color: $primary;}
 
 .bb-dash {border-bottom: 1px dashed $primary;}
@@ -863,7 +851,7 @@ header {
   top: 0px;
   left: 0px;
   width: 100%;
-  z-index: 100;
+  z-index: 101;
   height: 100px; 
   @include flex-center();
   background: url(../img/bg/bg1.jpg) no-repeat center top;
@@ -950,6 +938,7 @@ header {
     #toggle-cart {
       position: relative;
       .cart-preview {
+        font-size: 16px;
         position: absolute;
         top: 100%;
         right: 0px;
@@ -967,26 +956,41 @@ header {
             height: 5em;
             object-fit: contain;
           }
-          .title {
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            font-family: $title-font;
-            font-weight: 700;
-            margin-bottom: 0.25em;
-          }
-          .ingredients {
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            line-height: 1.3em;
-            height: 2.6em;
+          .text {
+            flex: 1;
+            .title {
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              font-family: $title-font;
+              font-weight: 700;
+              margin-bottom: 0.25em;
+            }
+            .ingredients {
+              font-family: $sec-font;
+              display: -webkit-box;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              line-height: 1.3em;
+              height: 2.6em;
+            }
+          }         
+          .btn-del {
+            @include flex-center();
+            width: 1.3em;
+            height: 1.3em;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: scale-down;
+            }
           }
           .weight {
             width: 5em;
           }
           input[type="number"] {
+            font-family: $sec-font;
             border: none;
             max-width: 55px;
             padding: 0px;
@@ -1285,6 +1289,9 @@ main {
     @media (max-width: 767px) {
       top: 0.7em;
     }
+    @media (max-width: 575px) {
+      font-size: 14px;
+    }
   }
   &.comparable {
     box-shadow: none;
@@ -1423,7 +1430,7 @@ main {
     }
   }
   &.active {
-    background-color: $orange;
+    background-color: $primary;
     .cat{color: #fff;}
     .del {
       svg{
@@ -1768,99 +1775,6 @@ main {
   }
 }
 
-/* sec 9 */
-#sec-9 {
-  .fs-13 {
-    @media (max-width: 575px) {
-      font-size: 1em;
-    }
-  }
-}
-.vacancy-box {
-  display: flex;
-  flex-wrap: wrap;
-}
-.vacancy-preview {
-  background: #fff;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-  border-radius: 1.8em;
-  padding: 1.5em;
-  margin: 0 1.5em 1.5em 0;
-  width: fit-content;
-  @media (max-width: 991px) {
-    margin: 0 1em 1em 0;
-    padding: 1em;
-    border-radius: 1.5em;
-  }
-  @media (max-width: 575px) {
-    width: 100%;
-    margin: 0 0.5em 1em 0;
-    border-radius: 1em;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    padding: 1.5em;
-    position: relative;
-    a {
-      position: absolute;
-      top: 1em;
-      right: 1em;
-    }
-  }
-  .title {
-    font-weight: 500;
-    font-size: 1.25em;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 300px;
-  }
-}
-
-/* sec 10 */
-#sec-10 {
-  p {
-    line-height: 1.5em;
-    margin-bottom: 0.75em;
-  }
-  ul {
-    padding-left: 0px;
-    list-style-type: "⦁  ";
-    line-height: 1.5em;
-    @media (max-width: 767px) {
-      padding-left: 1.5em;
-    }
-    li {
-      margin-bottom: 0.5em;
-    }
-  }
-  .skill {
-    background-color: #f2f2f2;
-    padding: 0.75em 1em;
-    border-radius: 2em;
-    margin: 0 1em 1em 0;
-  }
-  .vacancy-swiper {
-    overflow: hidden;
-    padding-top: 1em;
-    padding-left: 1em;
-    margin-left: -1em;
-  }
-  .fs-15 {
-    @media (max-width: 767px) {
-      font-size: 1.25em;
-    }
-    @media (max-width: 575px) {
-      font-size: 1em;
-    }
-  }
-  .fs-20 {
-    @media (max-width: 767px) {
-      font-size: 1.5em;
-    }
-    @media (max-width: 575px) {
-      font-size: 1em;
-    }
-  }
-}
 
 /* sec 11 - product page */
 #sec-11 {
@@ -1907,14 +1821,9 @@ main {
       @media (max-width: 575px){
         top: .5em;
       }
-      &.compare {
+      &.favorite {
         right: 1em;
         @media (max-width: 575px){right: .5em;}
-      }
-      &.favorite {
-        right: 5em;
-        @media (max-width: 767px){right: 4em;}
-        @media (max-width: 575px){right: 3em;}
       }
     }
     .dropdown {
@@ -1924,7 +1833,7 @@ main {
         }
       }
       .dropdown-menu {
-        background-color: #4f4f4f;
+        background-color: rgba($minor, .95);
         color: #fff;
         padding: 1.5em;
         min-width: 275px;
@@ -1934,10 +1843,10 @@ main {
         &::after {
           content: "";
           position: absolute;
-          top: -0.6em;
+          bottom: 98%;
           right: 0.6em;
           width: 1.375em;
-          height: 1.375em;
+          height: 1em;
           background: url(../img/icons/triangle.svg) center no-repeat;
           background-size: contain;
         }
@@ -2004,18 +1913,17 @@ main {
   }
   button {
     border: 1px solid $primary;
-    // box-shadow: 0px 0px 10px $orange;
     padding: 0.6em 0;
     width: 120px;
     text-align: center;
     @media (max-width: 767px){
-      padding: 0.4em 0;
+      // padding: 0.4em 0;
       width: 100px;
-      font-size: .9em;
+      // font-size: .9em;
     }
     @media (max-width: 575px){
       width: 100%;
-      padding: 0.3em 0;
+      // padding: 0.3em 0;
       margin-top: .5em;
     }
     &[data-state="off"] {
@@ -2047,20 +1955,27 @@ main {
       border-color: transparent;
       padding: 0 0.5em 0 0;
       font-size: 2em;
-      color: #828282;
+      font-weight: bold;
+      color: $minor;
+      font-family: $title-font;
       background-color: transparent;
       @media (max-width: 575px){
         font-size: 1.2em;
       }
       &.active {
         color: $primary;
-        border-color: #f2f2f2;
+        border-color: $primary;
         background-color: transparent;
       }
       span {
         color: #000;
-        font-size: 0.5em;
-        vertical-align: middle;
+        font-size: 1rem;
+        font-family: $sec-font;
+        vertical-align: baseline;
+        font-weight: normal; 
+        @media (max-width: 575px){
+          font-size: .8rem;
+        }
       }
     }
   }
@@ -2172,11 +2087,11 @@ main {
           font-weight: 500;
           line-height: 1.5em;
           &:hover, &:focus {
-            color: $dark-orange;
+            color: darken($primary, 7%);
           }
           &:active, &.active {
             color: #fff;
-            background-color: $orange;
+            background-color: $primary;
           }
           &.note{
             &::after {
@@ -2190,11 +2105,11 @@ main {
           a, button {
             color: $primary;
             &:hover, &:focus {
-              color: $dark-orange;
+              color: darken($primary, 7%);
             }
             &:active, &.active {
               color: #fff;
-              background-color: $orange;
+              background-color: $primary;
             }
           }
         }
@@ -2453,18 +2368,18 @@ main {
         @media (max-width: 1399px){height: 150px;}
         @media (max-width: 575px){height: 28vw;}
       }
-      .btn-icon {
-        position: absolute;
-        top: 0px;
-        &.compare {
-          right: 1em;
-          @media (max-width: 575px){right: 0px;}
-        }
-        &.favorite {
-          right: 4em;
-          @media (max-width: 575px){right: 2em;}
-        }
-      }
+      // .btn-icon {
+      //   position: absolute;
+      //   top: 0px;
+      //   &.compare {
+      //     right: 1em;
+      //     @media (max-width: 575px){right: 0px;}
+      //   }
+      //   &.favorite {
+      //     right: 4em;
+      //     @media (max-width: 575px){right: 2em;}
+      //   }
+      // }
     }
     .text {
       grid-column: 3/6;
@@ -2616,32 +2531,6 @@ main {
   }
 }
 
-/* sec 16 - search */
-#sec-16 {
-  input[type="search"] {
-    border: 1px solid #fff;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    @media (max-width: 767px) {
-      padding: 0.6em 0.6em 0.6em 3em;
-    }
-  }
-}
-#sticky-menu {
-  background-color: #fff;
-  position: sticky;
-  left: 0px;
-  top: 65px;
-  z-index: 1000;
-  padding-bottom: .5em;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, .05);
-  @media (max-width: 1199px) {
-    top: 60px;
-  }
-  @media (max-width: 767px) {
-    top: 54px;
-  }
-}
-
 
 footer {
   background-color: #080A0E;
@@ -2686,8 +2575,8 @@ footer {
       background-color: $primary;
     }
     &:active {
-      border: 1px solid $dark-primary;
-      background-color: $dark-primary;
+      border: 1px solid darken($primary, 7%);
+      background-color: darken($primary, 7%);
     }
     img {
       width: 1.5em;
@@ -2730,18 +2619,17 @@ footer {
   }
 }
 
-
 /* breadcrumbs */
 .breadcrumb-item {
   a {
-    color: #4f4f4f;
+    color: $gray-2;
     transition: 0.2s;
     &:hover,
     &:focus {
       color: $primary;
     }
     &:active {
-      color: $dark-orange;
+      color: darken($primary, 7%);
     }
   }
   &:last-child {
@@ -2791,7 +2679,7 @@ footer {
   &:active {
     svg {
       path {
-        stroke: $dark-primary;
+        stroke: darken($primary, 7%);
       }
     }
   }
