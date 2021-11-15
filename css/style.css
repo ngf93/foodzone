@@ -3270,7 +3270,7 @@ main {
   background: #FFFFFF;
   -webkit-box-shadow: 0px 0px 8px rgba(179, 179, 179, 0.3);
           box-shadow: 0px 0px 8px rgba(179, 179, 179, 0.3);
-  border-radius: 1.2em;
+  border-radius: 5px;
   position: relative;
 }
 
@@ -3299,7 +3299,7 @@ main {
 #sec-13 .notification.type-2 img {
   width: 90px;
   height: 90px;
-  border-radius: 1.2em;
+  border-radius: 4px;
   -o-object-fit: cover;
      object-fit: cover;
   margin-right: .5em;
@@ -3317,7 +3317,7 @@ main {
 
 #sec-13 .notification.type-3 .img {
   position: relative;
-  border-radius: 1.2em 1.2em 0 0;
+  border-radius: 4px 4px 0 0;
   overflow: hidden;
 }
 

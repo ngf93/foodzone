@@ -152,32 +152,32 @@
 				<h1 class="d-none d-md-block">Личный кабинет</h1>
 				<div class="row">
 					<!-- navigation -->
-					<div class="col-md-4 col-lg-3">
+					<div class="col-md-4 col-xl-3 mb-4">
 						<nav>
 							<ul>
 								<li>
 									<a href="personal-account.html">Личные данные</a>
 								</li>
 								<li>
-									<a href="personal-account-2.html" class="active">Адрес доставки</a>
+									<a href="personal-account-2.html">Избранное</a>
 								</li>
 								<li>
 									<a href="personal-account-3.html">Бонусы</a>
 								</li>
 								<li>
-									<a href="personal-account-4.html">Способы оплаты</a>
+									<a href="personal-account-4.html" class="active">Адрес доставки</a>
 								</li>
 								<li>
-									<a href="personal-account-5.html">История заказов</a>
+									<a href="personal-account-5.html">Способы оплаты</a>
 								</li>
 								<li>
-									<a href="personal-account-6.html" class="note">Уведомления</a>
+									<a href="personal-account-6.html">История заказов</a>
 								</li>
 								<li>
 									<a href="personal-account-7.html">Условия использования</a>
 								</li>
 								<li>
-									<a href="personal-account-8.html">Чат с поддержкой</a>
+									<a href="personal-account-8.html" class="note">Уведомления</a>
 								</li>
 								<li>
 									<button type="button" data-bs-toggle="modal" data-bs-target="#account-exit">Выйти</button>
@@ -186,98 +186,92 @@
 						</nav>
 					</div>
 					<!-- content -->
-					<div class="col-md-8 col-lg-9 col-xxl-6 offset-1">
-						<div class="row">
-							<div class="col-lg-9 col-xl-7">
-								<!-- 1 stage -->
-								<form action="" class="mb-4 mb-sm-5">
-									<h5 class="gray-1">Адрес доставки</h5>
-									<div class="fs-09 gray-1 mb-4">Добавьте адрес для доставки по умолчанию.</div>
-									<button type="button" class="d-flex align-items-center">
-										<img src="img/icons/plus3.svg" alt="Добавить" class="me-2">
-										<span class="primary">Добавить адрес</span>
-									</button>
-								</form>
+					<div class="col-md-8 col-xl-7 col-xxl-6 offset-xl-1">
+						<!-- 1 stage -->
+						<form action="" class="mb-4 mb-sm-5">
+							<h5 class="gray-1">Адрес доставки</h5>
+							<div class="fs-09 gray-1 mb-4">Добавьте адрес для доставки по умолчанию.</div>
+							<button type="button" class="d-flex align-items-center">
+								<img src="img/icons/plus3.svg" alt="Добавить" class="me-2">
+								<span class="primary">Добавить адрес</span>
+							</button>
+						</form>
 
-								<!-- 2 stage -->
-								<form action="" class="mb-4 mb-sm-5">
-									<h5 class="gray-1">Адрес доставки</h5>
-									<div class="gray-1 mb-2">Название адреса</div>
-									<input type="text" placeholder="Например, Работа" class="mb-3">
-									<div class="gray-1 mb-2">Город</div>
-									<input type="text" placeholder="Казань" class="mb-3">
-									<div class="gray-1 mb-2">Район</div>
-									<select class="mb-3">
-										<option value="" selected disabled class="gray-4">Выберите район</option>
-										<option value="Район 1">Район 1</option>
-										<option value="Район 2">Район 2</option>
-										<option value="Район 3">Район 3</option>
-									</select>
-									<div class="gray-1 mb-2">Улица</div>
-									<input type="text" placeholder="Улица" class="mb-3">
-									<div class="row row-cols-1 row-cols-sm-3 gx-2 gx-md-4">
-										<div>
-											<div class="gray-1 mb-2">Дом</div>
-											<input type="text" placeholder="Дом" class="mb-4">
-										</div>
-										<div>
-											<div class="gray-1 mb-2">Этаж</div>
-											<input type="text" placeholder="Этаж" class="mb-4">
-										</div>
-										<div>
-											<div class="gray-1 mb-2">Квартира</div>
-											<input type="text" placeholder="Квартира" class="mb-4">
-										</div>
-									</div>
-									<div class="row row-cols-2 gx-2 gx-md-4">
-										<div>
-											<div class="gray-1 mb-2">Подъезд</div>
-											<input type="text" placeholder="Подъезд" class="mb-4">
-										</div>
-										<div>
-											<div class="gray-1 mb-2">Код двери</div>
-											<input type="text" placeholder="Код двери" class="mb-4">
-										</div>
-									</div>
-									<button type="submit" class="btn btn-2">Сохранить</button>
-								</form>
-
-								<!-- 3 stage -->
-								<form action="" class="mb-4 mb-sm-5">
-									<h5 class="gray-1">Адрес доставки</h5>
-									<div class="fs-09 gray-1 mb-4">Выберите адрес для доставки по умолчанию.</div>
-									<div class="d-flex align-items-start mb-4">
-										<input type="radio" name="address" value="Адрес Работа" id="address-1" checked="">
-										<div class="ms-2">
-											<label for="address-1" class="gray-1 fw-5">Адрес Работа</label>
-											<div class="d-flex mt-2">
-												<button type="button" class="fs-09 gray-1 me-3">Редактировать</button>
-												<button type="button" class="fs-09 gray-4">Удалить</button>
-											</div>
-										</div>
-									</div>
-									<div class="d-flex align-items-start mb-4">
-										<input type="radio" name="address" value="Адрес Котельная" id="address-2">
-										<div class="ms-2">
-											<label for="address-2" class="gray-1 fw-5">Адрес Котельная</label>
-											<div class="d-flex mt-2">
-												<button type="button" class="fs-09 gray-1 me-3">Редактировать</button>
-												<button type="button" class="fs-09 gray-4">Удалить</button>
-											</div>
-										</div>
-									</div>
-									<button type="button" class="d-flex align-items-center">
-										<img src="img/icons/plus3.svg" alt="Добавить" class="me-2">
-										<span class="primary">Добавить адрес</span>
-									</button>
-								</form>
-
-								<a href="" class="gray-3 d-flex align-items-center d-md-none">
-									<img src="img/icons/chevron-left.svg" alt="Вернуться назад" class="me-1">	
-									Вернуться назад
-								</a>
+						<!-- 2 stage -->
+						<form action="" class="mb-4 mb-sm-5">
+							<h5 class="gray-1">Адрес доставки</h5>
+							<div class="gray-1 mb-2">Название адреса</div>
+							<input type="text" placeholder="Например, Работа" class="mb-3">
+							<div class="gray-1 mb-2">Район</div>
+							<select class="mb-3">
+								<option value="" selected disabled class="gray-4">Выберите район</option>
+								<option value="Район 1">Район 1</option>
+								<option value="Район 2">Район 2</option>
+								<option value="Район 3">Район 3</option>
+							</select>
+							<div class="gray-1 mb-2">Улица</div>
+							<input type="text" placeholder="Улица" class="mb-3">
+							<div class="row row-cols-1 row-cols-sm-3 gx-2 gx-md-4">
+								<div>
+									<div class="gray-1 mb-2">Дом</div>
+									<input type="text" placeholder="Дом" class="mb-4">
+								</div>
+								<div>
+									<div class="gray-1 mb-2">Этаж</div>
+									<input type="text" placeholder="Этаж" class="mb-4">
+								</div>
+								<div>
+									<div class="gray-1 mb-2">Квартира</div>
+									<input type="text" placeholder="Квартира" class="mb-4">
+								</div>
 							</div>
-						</div>
+							<div class="row row-cols-2 gx-2 gx-md-4">
+								<div>
+									<div class="gray-1 mb-2">Подъезд</div>
+									<input type="text" placeholder="Подъезд" class="mb-4">
+								</div>
+								<div>
+									<div class="gray-1 mb-2">Код двери</div>
+									<input type="text" placeholder="Код двери" class="mb-4">
+								</div>
+							</div>
+							<button type="submit" class="btn btn-2">Сохранить</button>
+						</form>
+
+						<!-- 3 stage -->
+						<form action="" class="mb-4 mb-sm-5">
+							<h5 class="gray-1">Адрес доставки</h5>
+							<div class="fs-09 gray-1 mb-4">Выберите адрес для доставки по умолчанию.</div>
+							<div class="d-flex align-items-start mb-4">
+								<input type="radio" name="address" value="Адрес Работа" id="address-1" checked="">
+								<div class="ms-2">
+									<label for="address-1" class="gray-1 fw-5">Адрес Работа</label>
+									<div class="d-flex mt-2">
+										<button type="button" class="fs-09 gray-1 me-3">Редактировать</button>
+										<button type="button" class="fs-09 gray-4">Удалить</button>
+									</div>
+								</div>
+							</div>
+							<div class="d-flex align-items-start mb-4">
+								<input type="radio" name="address" value="Адрес Котельная" id="address-2">
+								<div class="ms-2">
+									<label for="address-2" class="gray-1 fw-5">Адрес Котельная</label>
+									<div class="d-flex mt-2">
+										<button type="button" class="fs-09 gray-1 me-3">Редактировать</button>
+										<button type="button" class="fs-09 gray-4">Удалить</button>
+									</div>
+								</div>
+							</div>
+							<button type="button" class="d-flex align-items-center">
+								<img src="img/icons/plus3.svg" alt="Добавить" class="me-2">
+								<span class="primary">Добавить адрес</span>
+							</button>
+						</form>
+
+						<a href="" class="gray-3 d-flex align-items-center d-md-none">
+							<img src="img/icons/chevron-left.svg" alt="Вернуться назад" class="me-1">	
+							Вернуться назад
+						</a>
 					</div>
 				</div>
 			</div>

@@ -9,7 +9,8 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
 	<link rel="stylesheet" href="css/style.css" />
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600;1,700;1,800&family=Roboto:ital@0;1&family=Rubik:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,600;0,700;0,800;1,500;1,600;1,700;1,800&family=Roboto:ital,wght@0,400;0,500;1,400;1,500&family=Rubik:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="fonts/fonts.css" />
 </head>
 <body>
 	<header>
@@ -150,9 +151,9 @@
 		<section id="sec-13" class="mb-8">
 			<div class="container">
 				<h1 class="d-none d-md-block">Личный кабинет</h1>
-				<div class="row justify-content-between">
+				<div class="row">
 					<!-- navigation -->
-					<div class="col-md-4 col-lg-3">
+					<div class="col-md-4 col-xl-3 mb-4">
 						<nav>
 							<ul>
 								<li>
@@ -186,115 +187,125 @@
 						</nav>
 					</div>
 					<!-- content -->
-					<div class="col-md-8 col-lg-9 col-xxl-8">
-						<div class="row">
-							<div class="col-lg-9">
-								<!-- discount -->
-								<div class="mb-5">
-									<h5>Мои скидки</h5>
-									<div class="card mb-4">
-										<div class="row row-cols-2 gx-2 h-100">
-											<div class="d-flex flex-column justify-content-between">
-												<h5>Скидочная карта</h5>
-												<div class="primary fw-5 fs-12">3%</div>
-											</div>
-											<div class="d-flex flex-column justify-content-end align-items-end">
-												<div class="barcode" data-bs-toggle="modal" data-bs-target="#barcode">
-													A1234567890B
-												</div>
-											</div>
+					<div class="col-md-8 col-xl-9">
+						<h5>Избранное</h5>
+						<div class="row row-cols-2 row-cols-sm-3 row-cols-md-2 row-cols-xl-3 gx-2 gy-3 g-md-4">
+							<div>
+								<div class="product-preview">
+									<div>
+										<a href="product.html">
+											<img src="img/products/margarita.png" alt="">
+											<h5>Пицца «Маргарита»</h5>
+										</a>
+										<div class="ingredients">Тесто, томатный соус, сыр, томаты, базилик, орегано</div>
+										<div class="switch">
+											<div class="indicator" style="width: 33.3333%; transform: translateX(100%);"></div>
+											<button type="button" class="switch-option" onclick="switchTo(this);">25 см</button>
+											<button type="button" class="switch-option active" onclick="switchTo(this);">30 см</button>
+											<button type="button" class="switch-option" onclick="switchTo(this);">35 см</button>
 										</div>
 									</div>
-									<div class="d-flex align-items-center fw-5">
-										Ваша скидка:
-										<span class="primary mx-3">3%</span>
-										<img src="img/icons/help-circle.svg" alt="">
-									</div>
-									<div class="gray-1 fw-5 mt-4">Номер скидочной карты</div>
-									<div class="gray-1 mt-2">№ 4556 8900 3765</div>
-									<div class="gray-1 fw-5 mt-4">Увеличьте скидку до 5%!</div>
-									<div class="gray-1 mt-2">Для этого совершите покупки на сумму от 10 000 ₽</div>
-									<div class="d-flex align-items-center fw-5 mt-4">
-										Сумма заказов:
-										<span class="primary mx-3">7 000 ₽</span>
-										<img src="img/icons/help-circle.svg" alt="">
-									</div>
-								</div>
-
-								<!-- bonuses -->
-								<div class="mb-5">
-									<h5>Мои бонусы</h5>
-									<div class="card mb-4">
-										<div class="row row-cols-2 gx-2 h-100">
-											<div class="d-flex flex-column justify-content-between">
-												<h5>Бонусная карта</h5>
-												<div class="primary fw-5 fs-12">150 баллов</div>
-											</div>
-											<div class="d-flex flex-column justify-content-center align-items-end">
-												<div class="qrcode" data-bs-toggle="modal" data-bs-target="#qrcode">
-													<img src="img/qr-code.png" alt="">
-												</div>
+									<div class="d-md-flex justify-content-between align-items-center">
+										<div class="price d-flex flex-row flex-md-column align-items-center align-items-md-start justify-content-between mb-2 mb-md-0">
+											<div class="primary sec-font">400&nbsp;грамм</div>
+											<div class="sec-font d-flex flex-wrap flex-row-reverse flex-md-row align-items-center">
+												<span class="fw-5 fs-15 align-middle">300&nbsp;₽</span>
+												<span class="gray-3 text-decoration-line-through align-middle me-1 me-md-0 ms-1">500&nbsp;₽</span>
 											</div>
 										</div>
+										<div class="add-to-cart">
+											<div class="add-count">
+												<button class="btn-mini" type="button" onclick="checkValue(this)">
+													<img src="img/icons/minus2.svg" alt="">
+												</button>
+												<input type="number" placeholder="0" value="1">
+												<button class="btn-mini" type="button">
+													<img src="img/icons/plus2.svg" alt="">
+												</button>
+											</div>
+											<button type="button" class="add-prod" onclick="addToCart(this)">Добавить</button>
+										</div>
 									</div>
-									<div class="d-flex align-items-center fw-5">
-										Начисленные баллы
-										<span class="primary mx-3">150</span>
-										<img src="img/icons/help-circle.svg" alt="">
-									</div>
-									<div class="gray-1 fw-5 mt-4">Номер скидочной карты</div>
-									<div class="gray-1 mt-2">№ 4556 8900 3765</div>
-									<div class="gray-1 fw-5 mt-4">Оплачивайте заказы баллами!</div>
-									<div class="gray-1 mt-2">10 баллов = 1 рубль</div>
-									<div class="gray-1 fw-5 mt-4">Уровень начислений</div>
-									<div class="gray-1 mt-2">Сейчас вы получаете 6% от каждого заказа. Совершите покупки от <span class="primary">10 000 ₽</span> и получайте 8%.</div>
-									<div class="d-flex align-items-center fw-5 mt-4">
-										Сумма заказов:
-										<span class="primary mx-3">7 000 ₽</span>
-										<img src="img/icons/help-circle.svg" alt="">
-									</div>
+									<button type="button" class="btn-icon favorite" data-state="on" onclick="toggleState(this);"></button>
 								</div>
-
-								<div class="fw-5 fs-12 gray-1 mb-4">История баллов</div>
-								<div class="table-responsive">
-									<table class="table table-borderless table-lg">
-										<thead>
-											<tr>
-												<th>Операция</th>
-												<th>Дата</th>
-												<th>Количество</th>
-												<th>Заказ</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>Начислено</td>
-												<td>12.09.2021</td>
-												<td>12</td>
-												<td>№ 1221</td>
-											</tr>
-											<tr>
-												<td>Потрачено</td>
-												<td>02.09.2021</td>
-												<td>7</td>
-												<td>№ 67</td>
-											</tr>
-											<tr>
-												<td>Начислено</td>
-												<td>12.01.2021</td>
-												<td>45</td>
-												<td>№ 89</td>
-											</tr>
-										</tbody>
-									</table>
+							</div>
+							<div>
+								<div class="product-preview">
+									<div>
+										<a href="product.html">
+											<img src="img/products/filadelfia.png" alt="">
+											<h5>Сет&nbsp;«Филадельфия»</h5>
+										</a>
+										<div class="ingredients">Тесто, томатный соус, сыр, томаты, базилик, орегано</div>
+									</div>
+									<div class="d-md-flex justify-content-between align-items-center">
+										<div class="price d-flex flex-row flex-md-column align-items-center align-items-md-start justify-content-between mb-2 mb-md-0">
+											<div class="primary sec-font">400&nbsp;грамм</div>
+											<div class="sec-font d-flex flex-wrap flex-row-reverse flex-md-row align-items-center">
+												<span class="fw-5 fs-15 align-middle">300&nbsp;₽</span>
+												<span class="gray-3 text-decoration-line-through align-middle me-1 me-md-0 ms-1">500&nbsp;₽</span>
+											</div>
+										</div>
+										<div class="add-to-cart">
+											<div class="add-count">
+												<button class="btn-mini" type="button" onclick="checkValue(this)">
+													<img src="img/icons/minus2.svg" alt="">
+												</button>
+												<input type="number" placeholder="0" value="1">
+												<button class="btn-mini" type="button">
+													<img src="img/icons/plus2.svg" alt="">
+												</button>
+											</div>
+											<button type="button" class="add-prod" onclick="addToCart(this)">Добавить</button>
+										</div>
+									</div>
+									<button type="button" class="btn-icon favorite" data-state="on" onclick="toggleState(this);"></button>
 								</div>
-
-								<a href="" class="gray-3 d-flex align-items-center d-md-none mt-5">
-									<img src="img/icons/chevron-left.svg" alt="Вернуться назад" class="me-1">	
-									Вернуться назад
-								</a>
+							</div>
+							<div>
+								<div class="product-preview">
+									<div>
+										<a href="product.html">
+											<img src="img/products/margarita.png" alt="">
+											<h5>Пицца «Маргарита»</h5>
+										</a>
+										<div class="ingredients">Тесто, томатный соус, сыр, томаты, базилик, орегано</div>
+										<div class="switch">
+											<div class="indicator" style="width: 33.3333%; transform: translateX(100%);"></div>
+											<button type="button" class="switch-option" onclick="switchTo(this);">25 см</button>
+											<button type="button" class="switch-option active" onclick="switchTo(this);">30 см</button>
+											<button type="button" class="switch-option" onclick="switchTo(this);">35 см</button>
+										</div>
+									</div>
+									<div class="d-md-flex justify-content-between align-items-center">
+										<div class="price d-flex flex-row flex-md-column align-items-center align-items-md-start justify-content-between mb-2 mb-md-0">
+											<div class="primary sec-font">400&nbsp;грамм</div>
+											<div class="sec-font d-flex flex-wrap flex-row-reverse flex-md-row align-items-center">
+												<span class="fw-5 fs-15 align-middle">300&nbsp;₽</span>
+												<span class="gray-3 text-decoration-line-through align-middle me-1 me-md-0 ms-1">500&nbsp;₽</span>
+											</div>
+										</div>
+										<div class="add-to-cart">
+											<div class="add-count">
+												<button class="btn-mini" type="button" onclick="checkValue(this)">
+													<img src="img/icons/minus2.svg" alt="">
+												</button>
+												<input type="number" placeholder="0" value="1">
+												<button class="btn-mini" type="button">
+													<img src="img/icons/plus2.svg" alt="">
+												</button>
+											</div>
+											<button type="button" class="add-prod" onclick="addToCart(this)">Добавить</button>
+										</div>
+									</div>
+									<button type="button" class="btn-icon favorite" data-state="on" onclick="toggleState(this);"></button>
+								</div>
 							</div>
 						</div>
+						<a href="" class="gray-3 d-flex align-items-center d-md-none mt-5">
+							<img src="img/icons/chevron-left.svg" alt="Вернуться назад" class="me-1">	
+							Вернуться назад
+						</a>
 					</div>
 				</div>
 			</div>
@@ -681,42 +692,6 @@
 							</div>
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="modal fade" id="qrcode" tabindex="-1" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-			<div class="modal-content">
-				<button type="button" class="btn-close" data-bs-dismiss="modal">
-					<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-						<path d="M18 6L6 18"/>
-						<path d="M6 6L18 18"/>
-					</svg>						
-				</button>
-				<div class="modal-body">
-					<div class="qrcode mx-auto mb-4">
-						<img src="img/qr-code.png" alt="">
-					</div>
-					<div class="fs-15 text-center mt-3">Карта № 4556 8900 3765</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="modal fade" id="barcode" tabindex="-1" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-			<div class="modal-content">
-				<button type="button" class="btn-close" data-bs-dismiss="modal">
-					<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-						<path d="M18 6L6 18"/>
-						<path d="M6 6L18 18"/>
-					</svg>						
-				</button>
-				<div class="modal-body">
-					<div class="barcode mx-auto mb-4">
-						A1234567890B
-					</div>
-					<div class="fs-15 text-center mt-3">Карта № 4556 8900 3765</div>
 				</div>
 			</div>
 		</div>
