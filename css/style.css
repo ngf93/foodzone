@@ -354,6 +354,10 @@ select:focus {
   cursor: pointer;
 }
 
+.switch-option input {
+  cursor: pointer;
+}
+
 @media (max-width: 767px) {
   .switch-option {
     padding: 0.4em 0.5em;

@@ -260,9 +260,18 @@
 								<div class="ingredients">Тесто, томатный соус, сыр, томаты, базилик, орегано</div>
 								<div class="switch">
 									<div class="indicator"></div>
-									<button type="button" class="switch-option" onclick="switchTo(this);">25 см</button>
-									<button type="button" class="switch-option active" onclick="switchTo(this);">30 см</button>
-									<button type="button" class="switch-option" onclick="switchTo(this);">35 см</button>
+									<div class="switch-option text-form">
+										<input type="radio" name="product-1" value="25 см" onchange="switchTo(this);">
+										<div>25 см</div>
+									</div>
+									<div class="switch-option text-form active">
+										<input type="radio" name="product-1" value="30 см" onchange="switchTo(this);" checked>
+										<div>30 см</div>
+									</div>
+									<div class="switch-option text-form">
+										<input type="radio" name="product-1" value="35 см" onchange="switchTo(this);">
+										<div>35 см</div>
+									</div>
 								</div>
 							</div>
 							<div class="d-md-flex justify-content-between align-items-center">

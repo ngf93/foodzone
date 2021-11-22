@@ -57,14 +57,15 @@ function verifyInput(form){
   }
 }
 
-function switchTo(btn){
-  let parent = btn.parentElement;
+function switchTo(input){
+  let parent = input.closest('.switch');
   let ind = parent.querySelector('.indicator');
+  let option = input.parentElement;
   let arr_options = Array.from(parent.querySelectorAll('.switch-option'));
   for(let i = 0; i < arr_options.length; i++){
     arr_options[i].classList.remove('active');
-    if(btn == arr_options[i]){
-      btn.classList.add('active');
+    if( arr_options[i] == option ){
+      arr_options[i].classList.add('active');
       ind.style.transform = moveInd(i);
     }
   }
